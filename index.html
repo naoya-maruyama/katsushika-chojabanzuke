@@ -72,6 +72,7 @@ button,select,input{font:inherit;color:inherit}
 .b3-month-pill b{font-family:var(--display);font-weight:400;font-size:15px}
 .b3-month-pill .ev{color:#9a3a12;font-weight:700}
 .b3-month-pill .nx{color:#66757d}
+.b3-month-pill .esc{align-self:center;color:#fff;background:#c2410c;border-radius:999px;padding:1px 8px;font-weight:700;font-size:11px}
 .b3-dream{background:linear-gradient(135deg,#fff6d2,#ffd76a);color:#5a3b00}
 .b3-dream b{font-family:var(--display);font-weight:400;font-size:15px}
 .b3-month-pill[hidden],.b3-dream[hidden]{display:none}
@@ -197,6 +198,7 @@ input[type="text"],input:not([type]),input[type="number"],select{padding:7px 10p
 .rent td{text-align:right;font-variant-numeric:tabular-nums}
 .rent tr.on th,.rent tr.on td{font-weight:700;color:var(--ink)}
 .rent tr.on th::before{content:"▶ ";color:var(--ayame)}
+.rent tr.now th,.rent tr.now td{font-weight:700;color:var(--gold,#b8860b);border-top:1px solid var(--line)}
 .datum{font-size:12px;color:var(--ink-3)}
 .players{list-style:none;margin:0;padding:0;display:grid;gap:6px}
 .players li{display:grid;gap:5px;padding:7px 10px;border-radius:9px;border:1px solid transparent}
@@ -237,6 +239,33 @@ input[type="text"],input:not([type]),input[type="number"],select{padding:7px 10p
 .manage .ops{display:flex;flex-wrap:wrap;gap:4px;grid-column:2}
 .debt{display:grid;gap:8px;padding:12px;border-radius:10px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 40%,transparent)}
 .debt h3{margin:0;font-size:16px;color:var(--warn)}
+.wbox{display:grid;gap:4px;border-top:1px solid var(--line);padding-top:10px}
+.wbox[hidden]{display:none}
+.wh{display:flex;align-items:baseline;justify-content:space-between;gap:8px;font-size:13px}
+.wresult{display:grid;gap:4px;margin:4px 0 2px}
+.wchart{position:relative}
+.wchart svg{display:block;max-width:100%;height:auto;touch-action:pan-y;outline:none}
+.wchart svg:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px;border-radius:4px}
+.wchart .grid{stroke:var(--line);stroke-width:1}
+.wchart .ax{fill:var(--ink-3);font-size:10.5px;font-family:var(--ui);font-variant-numeric:tabular-nums}
+.wchart .endv{fill:var(--ink-2);font-weight:700}
+.wchart .ln{fill:none;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.wchart .dot{stroke:var(--paper);stroke-width:2}
+.wchart .ring{fill:var(--paper);stroke-width:2.5}
+.wchart .xh{stroke:var(--ink-3);stroke-width:1}
+.wchart .tip{position:absolute;top:2px;pointer-events:none;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12px;line-height:1.5;box-shadow:0 6px 18px -8px rgba(0,0,0,.35);min-width:128px;z-index:5}
+.wchart .tip .h{color:var(--ink-3);font-size:11px;margin-bottom:2px}
+.wchart .tip .r{display:flex;align-items:center;gap:6px;white-space:nowrap}
+.wchart .tip .r i{display:inline-block;width:12px;border-top:2px solid var(--c)}
+.wchart .tip .r b{font-variant-numeric:tabular-nums}
+.wchart .tip .r span{color:var(--ink-2)}
+.wlegend{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:11.5px;color:var(--ink-2)}
+.wlegend i{display:inline-block;width:14px;border-top:2px solid var(--c);vertical-align:middle;margin-right:4px}
+.wtable summary{font-size:11.5px;color:var(--ink-3);cursor:pointer}
+.wtable .tw{max-height:220px;overflow:auto;margin-top:4px}
+.wtable table{border-collapse:collapse;font-size:11.5px;font-variant-numeric:tabular-nums;width:100%}
+.wtable th,.wtable td{padding:2px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.wtable th:first-child{text-align:left;color:var(--ink-3);font-weight:400}
 .debt dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px 12px;font-size:13px}
 .debt dt{color:var(--ink-2)}
 .debt dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;font-weight:700}
@@ -249,6 +278,10 @@ input[type="text"],input:not([type]),input[type="number"],select{padding:7px 10p
 .zones li.done{opacity:.55}
 .zones .stars{color:#e07b0c;font-size:13px;letter-spacing:.05em}
 .cal{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:8px}
+.ztab{border-collapse:collapse;font-size:12.5px;margin:8px 0 4px;width:100%;max-width:440px}
+.ztab th,.ztab td{padding:3px 8px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap;font-variant-numeric:tabular-nums}
+.ztab tr:first-child td{font-weight:700;color:var(--ink-2);font-size:12px;white-space:normal;line-height:1.3;vertical-align:bottom}
+.ztab th{color:var(--gold,#b8860b);font-weight:700}
 .cal th,.cal td{padding:3px 6px;border-bottom:1px dotted var(--line);text-align:left;vertical-align:top;font-weight:400}
 .cal th{white-space:nowrap;font-weight:700;color:var(--ink)}
 .cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -336,6 +369,7 @@ input[type="text"],input:not([type]),input[type="number"],select{padding:7px 10p
       <section class="panel" aria-label="顔ぶれ">
         <div class="ph"><h3>顔ぶれ</h3><span id="playersNote"></span></div>
         <ul class="players" id="players"></ul>
+        <div class="wbox" id="worthBox" hidden></div>
       </section>
       <section class="panel" aria-label="土地の札">
         <div class="ph"><h3>土地の札</h3><span id="detailNote"></span></div>
@@ -352,33 +386,48 @@ input[type="text"],input:not([type]),input[type="number"],select{padding:7px 10p
     <details open>
       <summary>遊び方</summary>
       <ol>
-        <li>2〜6人で遊びます。全員3億円から始め、サイコロ2つで進みます。盤は1辺11マス・全40マスで、各辺の真ん中は葛飾を走る路線（押上線・本線・路線バス・常磐線）です。出発を通るたびに4,000万円。</li>
-        <li>空き地に止まったら買えます。人の土地に止まったら家賃を払います。同じ色の土地をすべて持つ（買い占める）と家賃が2倍になり、家を建てられます（家1軒2,500万〜5,000万円。家4軒の次はマンションで1億〜2億5,000万円）。同じ色の土地は、盤の同じ辺に並んでいます。</li>
-        <li><b>買い取り</b>：色がそろっていない人の土地（家なし）に止まったら、家賃を払ったあとに倍の値段で買い取れます。<b>抵当に入っている土地は、色がそろっていても買い取れます</b>（代金のうち抵当の分は銀行へ返済、残りが持ち主へ）。</li>
-        <li><b>交通の4路線</b>は持っている数で運賃がはね上がります（1路線600万円、2路線1,500万円、3路線4,000万円、4路線そろうと1億2,000万円）。4路線をそろえて<b>葛飾交通網を制覇</b>すると、毎月ほかの全員から定期代1,000万円も入ります。</li>
-        <li><b>特別な施設</b>：<b>金町浄水場</b>（1億8,000万円）は止まった人からサイコロの目×500万円、毎月ほかの全員から建物1段につき200万円の水道料金。<b>山本亭</b>（2億2,000万円）は止まった人から資産の5%の入館料、毎月資産1位の人から3,000万円のお茶会の席料（持ち主が1位なら維持費2,000万円を払う）。</li>
-        <li><b>開かずの踏切</b>：「路地で迷子」やおみくじ、ゾロ目3回で足止め。ゾロ目で渡るか、1,000万円で回り道。3回目に出なければ1,000万円払って進みます。</li>
-        <li>税金やカードの支払いは<b>河川敷の募金箱</b>にたまり、河川敷に止まった人がもらえます。</li>
-        <li><b>お金が足りないとき</b>は、どうやってお金を作るかを自分で選びます。家やマンションを売る（建築費の半額）、土地を抵当に入れる（値段の半額。外すときは55%）、土地を銀行に売る（値打ちの7割）、ほかの人に交渉で売る。足りるようになったら支払います。どうしても足りなければ破産して、残りの財産は支払い先に渡ります。自分の番に「降参する」で対局から降りることもできます。</li>
-        <li>決めた周回が終わったら、資産（お金・土地・建物の合計。抵当の分は差し引き）がいちばん多い人の勝ち。</li>
+        <li><b>勝ち負け</b>：決めた月数（周回）が終わったとき、<b>資産</b>がいちばん多い人の勝ちです（「最後のひとりまで」なら、最後まで破産しなかった人の勝ち）。<b>資産＝手持ちのお金＋持っている土地の時価＋家・マンションを売ったときの額（時価の半額）−抵当の借金</b>（借金は、抵当を外すときに返す額＝借りた額の1.1倍）。つまり資産は「いま全部を銀行に売ったら手元に残るお金」です。家やマンションを建てると、払った額と売ったときの額の差（建てた値段の半分）だけ資産が下がり、家賃で取り返していきます。<b>時価</b>は「いまの値段」のことで、再開発の★で上がります。</li>
+        <li><b>進み方</b>：2〜6人で、全員3億円から始めます。サイコロ2つで進み、出発を通るたびに4,000万円（資産が最下位の人は8,000万円）。ゾロ目ならもう一度ふれますが、3回続くと「開かずの踏切」で足止めです。盤は全40マスで、各辺の真ん中に路線（押上線・本線・路線バス・常磐線）があります。</li>
+        <li><b>土地</b>：空き地に止まったら、時価で買えます（買わなければ空き地のまま）。人の土地に止まったら家賃を払います（抵当中の土地は家賃なし）。同じ色の土地をすべて持つと、家のない土地の家賃が2倍になり、家を建てられるようになります。</li>
+        <li><b>家とマンション</b>：自分の番に、同じ色の中で均等に建てます（その色に抵当中の土地があると建てられません）。家4軒の次はマンションです。建てる値段は、★がないとき家1軒2,500万〜5,000万円、マンション1億〜2億5,000万円で、★があると上がります（下の「再開発」）。銀行に売ると<b>時価（いま建てる値段）の半額</b>です。</li>
+        <li><b>買い取り</b>：人の土地に止まったあと、その土地を<b>時価の2倍</b>で買い取れることがあります。<br>・色の土地は、持ち主がその色をまだそろえていないとき<br>・路線は、持ち主が4路線そろえていないとき<br>・<b>抵当中なら</b>、色の土地・路線・浄水場・山本亭のどれでも（代金のうち抵当の返済分は銀行へ、残りが持ち主へ）<br>浄水場と山本亭は、抵当中のときだけ買い取れます。資産が最下位の人は、路線を時価で買い取れます（下の「下町の人情」）。</li>
+        <li><b>路線</b>：運賃は、持ち主が持っている路線の数で決まります。1路線600万円／2路線2,500万円／3路線6,000万円／4路線1億5,000万円。4路線そろえると<b>葛飾交通網を制覇</b>で、毎月ほかの全員（最下位の人はのぞく）から定期代1,000万円も入ります（抵当中の路線がある月はお休み）。</li>
+        <li><b>金町浄水場</b>（1億8,000万円）：止まった人はサイコロの目×500万円を払います。毎月はじめに、ほかの全員が建物1段につき200万円の水道料金を持ち主に払います（マンションは5段。8月の猛暑は2倍。浄水場が抵当中の月はお休み）。</li>
+        <li><b>山本亭</b>（3億円）：止まった人は<b>資産×（サイコロの目×2.5%）</b>の入館料を払います。目が2なら資産の5%、7なら17.5%、12なら30%（最低1,000万円）。ゴールデンウィークの月と、テレビ特集の号外が出てから月末までは、目に関係なく30%です。毎月はじめのお茶会で資産1位の人が持ち主に3,000万円を払い、持ち主自身が1位のときは維持費5,000万円を募金箱へ払います（山本亭が抵当中の月はお休み）。</li>
+        <li><b>お金が足りないとき</b>：自分の番と、支払いが足りないときは、銀行が土地は<b>時価</b>で、家・マンションは<b>時価の半額</b>で買い取ります（家はその色の中で多い方から均等に、土地はその色の建物を全部売ってから。抵当中の土地は、時価から返済分を引いた額）。<b>抵当</b>なら、土地を持ったまま時価の半分を借りられます（その色に建物がないときだけ。外すときは借りた額の1.1倍を返す。抵当中は家賃なし）。<b>支払いが資産より少なければ、売ればかならず払えます。</b>「おまかせで売って払う」を押すと、家賃の少ないものから順に、抵当に入れたり売ったりして自動で払います。資産より大きい支払いは、交渉で売れなければ破産です。破産すると、建物は銀行が半額で買い取り、お金と土地は支払い先の人に渡ります（銀行や募金箱への支払いなら、お金はそこへ、土地は銀行に戻ります）。自分の番に「降参する」で降りることもできます。</li>
+        <li><b>開かずの踏切</b>：「路地で迷子」・カード・ゾロ目3回で足止め。ゾロ目が出れば渡れます。1,000万円払って回り道もでき、3回目に出なければ1,000万円払って進みます。「踏切ぬけ道券」があればすぐ出られます。</li>
+        <li><b>回覧板とおみくじ</b>：盤に4マスずつあり、止まると1枚引きます（中身は下の「カードの一覧」）。回覧板は町内のできごと、おみくじは大大吉から大凶までの運だめしです。カードの「土地」には、路線・浄水場・山本亭もふくみます。</li>
+        <li><b>募金箱</b>：カード・号外・月のできごと・踏切の回り道などで払ったお金は河川敷の募金箱にたまり、河川敷に止まった人がもらえます。</li>
       </ol>
+    </details>
+    <details open>
+      <summary>再開発（★）</summary>
+      <p>色ごとに、再開発の★が0〜3つつきます。★が増えると、その色の土地はだれの持ち物でもこう変わります。</p>
+      <table class="ztab"><tr><th></th><td>家賃</td><td>時価（土地・家・マンション）</td></tr><tr><th>★1</th><td>×2</td><td>×1.5</td></tr><tr><th>★2</th><td>×2.5</td><td>×2</td></tr><tr><th>★3</th><td>×3</td><td>×2.5</td></tr></table>
+      <ul>
+        <li><b>時価は土地にも家・マンションにも同じ倍率でかかり、どこにでも同じように効きます</b>：空き地を買う値段、家やマンションを建てる値段、銀行に売る値段（家・マンションはその半額）、抵当で借りられる額、資産、固定資産税。もう建っている家とマンションも値上がりします。家賃の上がり方の方が大きいので、★のついた色は、★のない色より建物の元が早く取れます。</li>
+        <li>抵当で借りたお金の額は、あとから★が増えても変わりません（外すときに返すのも、借りた額の1.1倍のまま）。</li>
+        <li><b>★が増えるとき</b>：4月と10月の「再開発の告示」（資産が最下位の人が色を選ぶ）、カード（引いた人が選ぶ）、号外（立石・金町・新小岩の再開発、区の新しい計画）。選ぶ人は見送ってもかまいません。1つの色は★3までで、どの色も★3のときに★のカードを引くと、かわりに3,000万円もらえます。</li>
+      </ul>
     </details>
     <details open>
       <summary>葛飾ルール（大逆転のしかけ）</summary>
       <ul>
-        <li><b>かつしかカレンダー</b>：1周するごとに1か月進みます（4月スタート）。月ごとに下の表のできごとが起きます。いまの月と来月は盤の左上に出ます。</li>
-        <li><b>再開発</b>（4月・10月の告示、カード、号外）：資産が<b>最下位の人</b>などが色を1つ選び、再開発の★を1つ増やします（同じ色に何度でも、最大★3。見送ってもよい）。家賃は★1で2倍、★2で2.5倍、★3で3倍。土地の値打ちは★1つごとに＋0.5倍、家とマンションの値打ちは＋1倍（★3なら土地2.5倍、建物4倍）です。</li>
+        <li><b>かつしかカレンダー</b>：全員が1回ずつ番を終えると1か月進みます（4月スタート）。月ごとに下の表のできごとが起きます。いまの月は盤の左上に出ます（広い画面では来月も）。</li>
+        <li><b>地価の高騰期</b>（「最後のひとりまで」の対局だけ）：3年目の4月（25周目）から、毎年4月に家賃・運賃・浄水場に止まったときの料金が1.5倍になります（3年目×1.5、4年目×2.25、5年目×約3.4…）。長引いた対局でも決着がつくようにするしかけで、いまの倍率は盤の左上に出ます。土地や建物の時価（買う値段・売る値段・資産）は変わらず、毎月の定期代・水道料金・お茶会、カードや号外の金額、給料、山本亭の入館料も上がりません。</li>
+        <li><b>家賃の倍率</b>：再開発の★、月のできごと、号外、地価の高騰期の倍率は、かけ算で重なります（例：★2の2.5倍の色で引っ越しシーズンの1.5倍なら3.75倍）。山本亭の入館料は資産に応じた別の決まりで、これらの倍率はかかりません。浄水場に止まったときの料金にかかるのは、地価の高騰期だけです。土地の札の家賃の表は倍率をかける前の額で、倍率がかかっているときは「いまの家賃」も出ます。</li>
         <li><b>かつしか号外</b>：だれかの番のはじめに、ときどき葛飾のニュースが飛びこみます。新金線BRTの開業、立石の新しい区役所、押上線の高架化、国税の一斉調査、株価の大暴落など。<b>号外はゲームの中のできごと</b>で、実際の計画やニュースとは違います。</li>
-        <li><b>かつしかドリーム</b>：1億円から始まり、毎月1,000万円ずつ積み上がるジャックポット。12月の<b>年末の大抽選</b>で抽選され、資産の少ない人ほど抽選券が多くもらえます（最下位がいちばん多い）。おみくじの大大吉でも全部当たります。</li>
-        <li><b>下町の人情</b>：資産が最下位の人は、出発を通ると2倍の8,000万円。路線の運賃もタダで、だれの路線でも元の値段で買い取れます（<b>下町パス</b>）。</li>
-        <li><b>大逆転のしかけ</b>：1位をねらい撃ちするもの（花火大会の協賛金、節分の鬼、国税の一斉調査、山本亭のお茶会）と、最下位を押し上げるもの（初詣のご利益、酉の市の熊手、年末の大抽選、クラウドファンディング）がたくさんあります。1位と最下位の手持ちがそっくり入れかわるカードや号外もあります。</li>
-        <li><b>陣地の地図</b>：盤の真ん中の葛飾区の地図では、町のエリアと家並みが持ち主の色に染まります。色を買い占めると、地図の上に「買い占め」の旗が立ちます。</li>
+        <li><b>かつしかドリーム</b>：1億円から始まり、毎月1,000万円ずつ積み上がります。12月の<b>年末の大抽選</b>の抽選券は、<b>全員1枚＋この1年で資産が最下位だった月1か月につき2枚</b>（最下位6か月なら13枚）。最下位の月は、毎月のはじめに数えます。最下位が長かった人ほど当たりやすく、抽選のあと数え直します。いまの月数は顔ぶれの欄に「最下位〇か月」と出ます。おみくじの大大吉でも全部当たり、当たったあとは1億円から積み直しです。</li>
+        <li><b>下町の人情</b>：資産が最下位の人は、出発を通ると2倍の8,000万円。路線の運賃もタダで、だれの路線でも時価で買い取れます（<b>下町パス</b>。交通網を制覇されていても、抵当中でも）。</li>
+        <li><b>大逆転のしかけ</b>：1位をねらい撃ちするもの（花火大会の協賛金、節分の鬼、国税の一斉調査、山本亭のお茶会）と、最下位を押し上げるもの（初詣のご利益、酉の市の熊手、年末の大抽選、クラウドファンディング、再開発の告示）がたくさんあります。1位と最下位の手持ちのお金がそっくり入れかわる回覧板と号外や、手持ちのお金がいちばん多い人とお金を入れかえるおみくじもあります。</li>
+        <li><b>資産の推移</b>：顔ぶれの欄のグラフで、毎月の資産の動きが見られます。首位が入れかわったところは白抜きの丸、線の先の丸はいまの資産です。グラフにふれると、その月の全員の資産が出ます。対局が終わると、結果の画面に大きく出ます。</li>
+        <li><b>陣地の地図</b>：盤の真ん中の葛飾区の地図は、町のエリアと家並みが持ち主の色に染まります。色を買い占めると「買い占め」の旗が立ちます。</li>
       </ul>
       <table class="cal" id="calTable"></table>
     </details>
     <details>
       <summary>土地の値段</summary>
-      <p>土地の値段は、国土交通省「令和8年地価公示」（2026年）を町ごとに平均した値（1㎡あたり）を、100㎡分にしたものです。町ごとの平均は、地価公示の地点を町名ごとにまとめた民間の集計サイト（土地ドットコム・土地代データ）の値で、国の公表値ではありません。路線・浄水場・山本亭の値段、家とマンションの建築費、家賃はゲーム用の設定です。</p>
+      <p>土地の元の値段（★がないときの時価）は、国土交通省「令和8年地価公示」（2026年）を町ごとに平均した値（1㎡あたり）を、100㎡分にしたものです。町ごとの平均は、地価公示の地点を町名ごとにまとめた民間の集計サイト（土地ドットコム・土地代データ）の値で、国の公表値ではありません。路線・浄水場・山本亭の値段、家とマンションの建築費、家賃はゲーム用の設定です。</p>
       <table class="prices" id="priceTable"></table>
     </details>
     <details>
@@ -398,10 +447,19 @@ input[type="text"],input:not([type]),input[type="number"],select{padding:7px 10p
 <script>
 /* ===== かつしか長者番付: rules engine (pure state machine, JSON state, money in 万円) ===== */
 const N_SQ = 40, START_MONEY = 30000, SALARY = 4000, JAIL_SQ = 10, JAIL_FEE = 1000, POT_SQ = 20, GOJAIL_SQ = 30, MAX_SEATS = 6;
-const MORT_RATE = 0.5, UNMORT_RATE = 0.55, SELL_RATE = 0.7, PROP_TAX = 0.014;
+// 時価 (the current price) is what the bank pays, what a building costs and what counts in 資産; a mortgage lends half of it
+const MORT_RATE = 0.5, MORT_FEE = 1.1;
 const DREAM_BASE = 10000, DREAM_STEP = 1000, HATSU_GIFT = 10000, MAX_ZONE = 3;
 // the two landmarks, the transit network and the calendar
-const UTIL_X = 500, YAMA_PCT = 5, TEIKI = 1000, WATER = 200, TEA = 3000, TEA_UPKEEP = 2000, HEAT = 300, SETSUBUN = 2000, NEWS_P = 0.08;
+// 山本亭: the fee is the dice total x 2.5% of the visitor's 資産 (5% to 30%)
+const UTIL_X = 500, YAMA_STEP = 2.5, YAMA_MAX = 30, YAMA_MIN = 1000, TEIKI = 1000, WATER = 200, TEA = 3000, TEA_UPKEEP = 5000, HEAT = 300, SETSUBUN = 2000, NEWS_P = 0.08;
+// かつしかドリーム: everyone holds one ticket, plus two for every month spent in last place since the last draw
+const DREAM_TICKET_BASE = 1, DREAM_TICKET_PER_MONTH = 2;
+// 地価の高騰期: in a game played to the last player, every April from the 3rd year (lap 25) multiplies
+// the rents, the fares and the waterworks fee by 1.5 (x1.5, x2.25, x3.375, ...)
+const ESC_FROM = 25, ESC_X = 1.5;
+// a multiplier as players read it: exact to two places (x2.25), otherwise rounded (x約3.4)
+const fmtX = x => (Math.abs(x * 100 - Math.round(x * 100)) < 1e-9 ? String(+x.toFixed(2)) : '約' + (+x.toFixed(1)));
 const BANK = -1, POT = -2, DREAM = -3;
 // eight neighbourhoods; every group sits on one side of the board, and every side has a transit line in its middle
 const GROUPS = [
@@ -421,7 +479,7 @@ const BOARD = [
   { k: 'prop', g: 0, n: '水元', land: 23.6, ll: [35.786, 139.858], sub: '水元公園のメタセコイアと小合溜の水辺' },
   { k: 'prop', g: 0, n: '東水元', land: 24.65, ll: [35.7815, 139.868], sub: '公園と江戸川にはさまれた住宅地' },
   { k: 'card', deck: 'kairan', n: '回覧板', sub: '町内のお知らせを1枚引く' },
-  { k: 'tax', id: 'juumin', n: '住民税', amt: 2000, sub: '2,000万円を募金箱へ' },
+  { k: 'card', deck: 'omikuji', n: 'おみくじ', sub: '運だめしを1枚引く' },
   { k: 'rail', n: '押上線', price: 4000, line: '#1f5fbf', ll: [35.7383, 139.8486], sub: '四ツ木・立石・青砥を結ぶ。いま高架化の工事中' },
   { k: 'prop', g: 1, n: '東四つ木', land: 27.3, ll: [35.7285, 139.832], sub: '荒川の土手と町工場' },
   { k: 'prop', g: 1, n: '宝町', land: 33.8, ll: [35.738, 139.8385], sub: '線路沿いの小さな住宅地' },
@@ -444,7 +502,7 @@ const BOARD = [
   { k: 'prop', g: 4, n: '東金町', land: 48.1, ll: [35.7775, 139.879], sub: '江戸川沿い、浄水場のとなり' },
   { k: 'rail', bus: true, n: '路線バス', brt: '新金線BRT', price: 4000, line: '#c8322b', ll: [35.744, 139.864], sub: '新小岩・亀有・金町を南北に結ぶバス', brtSub: '新小岩〜金町をバス専用道で結ぶ連節バス' },
   { k: 'prop', g: 5, n: '立石', land: 40.74, ll: [35.741, 139.8485], sub: '昼からにぎわう横丁と、新しい区役所の再開発' },
-  { k: 'yama', n: '山本亭', price: 22000, ll: [35.7576, 139.8794], sub: '大正から昭和はじめの和洋折衷の邸宅。庭園は海外の専門誌で全国3位に' },
+  { k: 'yama', n: '山本亭', price: 30000, ll: [35.7576, 139.8794], sub: '大正から昭和はじめの和洋折衷の邸宅。庭園は海外の専門誌で全国3位に' },
   { k: 'prop', g: 5, n: '青戸', land: 46.15, ll: [35.7495, 139.8565], sub: '中川のほとりの駅前' },
   { k: 'prop', g: 5, n: '東立石', land: 58.45, ll: [35.7335, 139.851], sub: '中川が大きく曲がる内側' },
   { k: 'gojail', n: '路地で迷子', sub: '開かずの踏切へ。出発は通らない' },
@@ -455,7 +513,7 @@ const BOARD = [
   { k: 'rail', n: '常磐線', price: 4000, line: '#00a073', ll: [35.7664, 139.8478], sub: '亀有・金町から上野・東京方面へ' },
   { k: 'card', deck: 'omikuji', n: 'おみくじ', sub: '運だめしを1枚引く' },
   { k: 'prop', g: 7, n: '西新小岩', land: 60.75, ll: [35.7235, 139.851], sub: '平和橋通り沿いのにぎわい' },
-  { k: 'tax', id: 'kotei', n: '固定資産税', sub: '持っている土地と建物の値打ちの1.4%を募金箱へ' },
+  { k: 'card', deck: 'kairan', n: '回覧板', sub: '町内のお知らせを1枚引く' },
   { k: 'prop', g: 7, n: '新小岩', land: 99.6, ll: [35.7195, 139.8605], sub: 'アーケード商店街の駅前。区でいちばん高い土地' }
 ];
 // rent with 1-4 houses as a share of the land price (cheap groups to dear groups); a mansion triples the 4-house rent on the cheap side, doubles it on the dear side
@@ -469,7 +527,7 @@ BOARD.forEach(s => {
   s.rents.push(round10(s.rents[4] * (3 - t)));
 });
 // a fare grows much faster than the number of lines: owning all four is the 葛飾交通網
-const RAIL_RENT = [0, 600, 1500, 4000, 12000];
+const RAIL_RENT = [0, 600, 2500, 6000, 15000];
 const GROUP_SQ = GROUPS.map((_, g) => BOARD.map((s, i) => s.k === 'prop' && s.g === g ? i : -1).filter(i => i >= 0));
 const RAIL_SQ = BOARD.map((s, i) => s.k === 'rail' ? i : -1).filter(i => i >= 0);
 const BUS_SQ = BOARD.findIndex(s => s.bus), UTIL_SQ = BOARD.findIndex(s => s.k === 'util'), YAMA_SQ = BOARD.findIndex(s => s.k === 'yama');
@@ -478,20 +536,20 @@ const LVL_NAME = ['更地', '家1軒', '家2軒', '家3軒', '家4軒', 'マン�
 
 // かつしかカレンダー: one lap of turns is one month, starting in April; every month has its event
 const MONTHS = ['4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月', '1月', '2月', '3月'];
-const ZONE_D = '資産が最下位の人が、再開発する色を1つ選ぶ（★が1つ増えて、家賃と土地・建物の値打ちが上がる）。見送ってもよい';
+const ZONE_D = '資産が最下位の人が、再開発する色を1つ選ぶ（★が1つ増えて、家賃と、土地・家・マンションの時価が上がる）。見送ってもよい';
 const MONTH_EV = [
   { id: 'zone', n: '再開発の告示', d: ZONE_D },
-  { id: 'gw', n: 'ゴールデンウィーク', d: '観光客でにぎわう。今月は「水元」の家賃と山本亭の入館料が2倍' },
+  { id: 'gw', n: 'ゴールデンウィーク', d: '観光客でにぎわう。今月は「水元」の色（水元・東水元）の家賃が2倍。山本亭の入館料はサイコロに関係なく資産の30%' },
   { id: 'shobu', n: '葛飾菖蒲まつり', d: '今月は「菖蒲の里」の家賃が2倍' },
   { id: 'hanabi', n: '葛飾納涼花火大会', d: '今月は「帝釈天と江戸川」の家賃が2倍。資産1位の人は手持ちの2割を協賛金として募金箱へ' },
-  { id: 'heat', n: '猛暑', d: '全員、建物1段につき300万円の電気代を募金箱へ。今月は浄水場の水道料金が2倍' },
-  { id: 'typhoon', n: '台風', d: '川がひとつあふれて、その川沿いの色の建物が1段ずつこわれる' },
+  { id: 'heat', n: '猛暑', d: '全員、建物1段につき300万円の電気代を募金箱へ。浄水場の毎月の水道料金も今月は2倍（建物1段につき400万円）' },
+  { id: 'typhoon', n: '台風', d: '川がひとつあふれて、その川沿いの色の建物が1段ずつこわれる（荒川＝「荒川べり」「菖蒲の里」、江戸川＝「水元」「帝釈天と江戸川」、中川＝「立石・青戸」「常磐線の駅まち」、新中川＝「新中川の東」「新小岩」）' },
   { id: 'zone', n: '再開発の告示', d: ZONE_D },
-  { id: 'tori', n: '酉の市', d: '商売繁盛の熊手。今月は資産が最下位の人の家賃収入が3倍' },
-  { id: 'jumbo', n: '年末の大抽選', d: 'かつしかドリームの抽選。資産が少ない人ほど当たりやすい' },
+  { id: 'tori', n: '酉の市', d: '商売繁盛の熊手。月のはじめに資産が最下位だった人は、今月受け取る家賃と運賃が3倍' },
+  { id: 'jumbo', n: '年末の大抽選', d: 'かつしかドリームの抽選。抽選券は全員1枚と、この1年で最下位だった月1か月につき2枚。最下位が長い人ほど当たりやすい' },
   { id: 'hatsumode', n: '柴又帝釈天の初詣', d: '資産が最下位の人に、ご利益の1億円' },
   { id: 'setsubun', n: '節分', d: '鬼は外！資産1位の人が、ほかの全員に2,000万円ずつ配る' },
-  { id: 'moving', n: '引っ越しシーズン', d: '今月はすべての家賃が1.5倍' }
+  { id: 'moving', n: '引っ越しシーズン', d: '今月は土地の家賃がすべて1.5倍' }
 ];
 
 const KAIRAN = [
@@ -501,33 +559,33 @@ const KAIRAN = [
   { t: '老朽化の一斉点検。家1軒につき1,000万円、マンション1棟につき6,000万円の修繕費を募金箱へ。', e: { repairs: [1000, 6000] } },
   { t: '町会長に就任。全員から2,000万円ずつ会費を集める。', e: { collectEach: 2000 } },
   { t: '回覧板を1か月も止めてしまった。全員に2,000万円ずつおわびする。', e: { payEach: 2000 } },
-  { t: '区画整理の話し合い。資産1位の人のいちばん安い土地（家のない色）を、値段の1.5倍で引き取る（お金が足りれば）。', e: { buyFromTop: 1.5 } },
+  { t: '区画整理の話し合い。資産1位の人のいちばん安い土地（建物のある色はのぞく）を、時価で引き取る（お金が足りるときだけ）。', e: { buyFromTop: 1 } },
   { t: '相続で大どんでん返し！資産1位と最下位の人の手持ちのお金が、そっくり入れかわる。', e: { swapTopLast: true } },
   { t: '空き巣に入られた。手持ちのお金の2割を募金箱へ。', e: { cashPct: 20 } },
-  { t: '防災訓練の集合場所へ。出発へ進み、給料を2倍もらう。', e: { moveTo: 0, bonus: true } },
+  { t: '防災訓練の集合場所へ。出発へ進み、給料を2回分もらう。', e: { moveTo: 0, bonus: true } },
   { t: '区役所で手続き。立石へ進む。出発を通ったら給料。', e: { moveTo: 26 } },
-  { t: '河川敷のごみ拾い。河川敷へ進んで募金箱をもらう。', e: { moveTo: 20 } },
+  { t: '河川敷のごみ拾い。河川敷へ進んで募金箱のお金をもらう。出発を通ったら給料。', e: { moveTo: 20 } },
   { t: '踏切ぬけ道券。開かずの踏切からすぐ出られる。使うまで持っておける。', e: { ticket: 1 } },
   { t: '迷子の猫を探して路地へ。開かずの踏切へ。出発は通らない。', e: { jail: true } },
   { t: 'まちづくり協議会で熱弁。好きな色を1つ再開発する（★が1つ増える）。', e: { zoneChoice: true } },
-  { t: '固定資産税の見直し。持っている土地と建物の値打ちの3%を募金箱へ。', e: { assetTax: 3 } }
+  { t: '固定資産税の納付書が届いた。持っている土地と建物の時価の3%を募金箱へ。', e: { assetTax: 3 } }
 ];
 const OMIKUJI = [
   { t: '大大吉。かつしかドリームが全部当たる！', e: { dream: true } },
   { t: '大吉。遠い親せきの遺産2億円が入った。', e: { gain: 20000 } },
   { t: '大吉・下剋上。いちばん手持ちの多い人と、手持ちのお金をそっくり入れかえる。', e: { swapCash: true } },
-  { t: '大吉・大逆転。資産1位の人のいちばん高い土地と、自分のいちばん安い土地を取りかえる（家のない色の土地どうし）。', e: { swapLand: true } },
+  { t: '大吉・大逆転。資産1位の人のいちばん高い土地と、自分のいちばん安い土地を取りかえる（建物のある色はのぞく。出せる土地がなければ、もらうだけ）。', e: { swapLand: true } },
   { t: '吉・再開発の目玉。好きな色を1つ再開発する（★が1つ増える）。', e: { zoneChoice: true } },
-  { t: '吉・下町の人情。全員から3,000万円ずつお祝いをもらう。', e: { collectEach: 3000 } },
-  { t: '中吉・地価の高騰。持っている土地1か所につき2,000万円もらう。', e: { perProp: 2000 } },
-  { t: '中吉・お金持ちのおすそわけ。資産1位の人から1億円もらう（自分が1位なら全員に3,000万円ずつ配る）。', e: { fromTop: 10000 } },
+  { t: '吉・ご近所のお祝い。全員から3,000万円ずつお祝いをもらう。', e: { collectEach: 3000 } },
+  { t: '中吉・土地の値上がり。持っている土地1か所につき2,000万円もらう。', e: { perProp: 2000 } },
+  { t: '中吉・お金持ちのおすそわけ。資産1位の人から1億円もらう（自分が1位なら、ほかの全員に3,000万円ずつ配る）。', e: { fromTop: 10000, topGives: 3000 } },
   { t: '小吉。帝釈天へお参り。柴又へ進む。出発を通ったら給料。', e: { moveTo: 21 } },
-  { t: '末吉。バスに飛び乗って、いちばん近い路線へ。だれかの持ち物なら運賃は2倍。', e: { nearestRail: true } },
+  { t: '末吉。バスに飛び乗って、次の路線のマスまで進む。だれかの持ち物なら運賃は2倍。出発を通ったら給料。', e: { nearestRail: true } },
   { t: '末吉。踏切がすぐ開いた。もう一度サイコロをふれる。', e: { again: true } },
   { t: '凶・税務調査。資産の1割を募金箱へ。', e: { worthPct: 10 } },
   { t: '凶・台風の直撃。自分の建物がすべて1段ずつこわれる。', e: { selfStorm: true } },
   { t: '大凶・株の大暴落。手持ちのお金の半分を募金箱へ。', e: { cashPct: 50 } },
-  { t: '大凶・タワマン投資の大失敗。いちばん値打ちのある土地を、建物ごと銀行に半値で手放す。', e: { fireSale: true } },
+  { t: '大凶・タワマン投資の大失敗。建物もふくめていちばん高い土地を、建物ごと銀行に売る。土地は時価の半額（抵当中なら返済分を引く）。', e: { fireSale: true } },
   { t: '凶・路地で迷子。開かずの踏切へ。出発は通らない。', e: { jail: true } }
 ];
 // かつしか号外: news that can break at the start of any turn (some of it is the future the ward is planning)
@@ -535,16 +593,16 @@ const NEWS = [
   { id: 'brt', once: 1, t: '新金線BRTが開業！新小岩〜金町をバス専用道で南北に結ぶ。「路線バス」は「新金線BRT」になり、運賃がずっと2倍。', e: { brt: true } },
   { id: 'tateishi', once: 1, t: '立石駅北口の再開発ビルが完成し、新しい区役所がオープン。「立石・青戸」の再開発の★が1つ増える。', e: { zoneUp: 5 } },
   { id: 'kanamachi', once: 1, t: '金町駅前にタワーマンションが完成。「常磐線の駅まち」の再開発の★が1つ増える。', e: { zoneUp: 6 } },
-  { id: 'shinkoiwa', once: 1, t: '新小岩駅前の大規模な再開発が決まった。「新小岩」の再開発の★が1つ増える。', e: { zoneUp: 7 } },
-  { id: 'koka', once: 1, t: '押上線の高架化が完成！開かずの踏切がついに開いた。足止めの人は全員すぐ出られる。', e: { koka: true } },
-  { id: 'tv', t: 'テレビで柴又の特集。観光客が押し寄せる！今月は「帝釈天と江戸川」の家賃と山本亭の入館料が3倍。', e: { tv: true } },
+  { id: 'shinkoiwa', once: 1, t: '新小岩駅前の大規模な再開発が決まった。「新小岩」の色（西新小岩・新小岩）の再開発の★が1つ増える。', e: { zoneUp: 7 } },
+  { id: 'koka', once: 1, t: '押上線の高架化が完成！開かずの踏切がいったん開いて、足止めの人は全員すぐ出られる。', e: { koka: true } },
+  { id: 'tv', t: 'テレビで柴又の特集。観光客が押し寄せる！今月は「帝釈天と江戸川」の家賃が3倍、山本亭の入館料はサイコロに関係なく資産の30%。', e: { tv: true } },
   { id: 'garden', t: '海外の日本庭園ランキングで山本亭が上位に！持ち主に観光収入1億円（持ち主がいなければ、最下位の人に観光ボランティアのお礼3,000万円）。', e: { garden: true } },
-  { id: 'rain', t: 'ゲリラ豪雨。どこかの町で建物が1段ずつこわれる。', e: { rain: true } },
+  { id: 'rain', t: 'ゲリラ豪雨。どこかの色の建物が1段ずつこわれる。', e: { rain: true } },
   { id: 'audit', t: '国税の一斉調査。資産1位の人は資産の15%を募金箱へ。', e: { topTax: 15 } },
   { id: 'cf', t: '下町のクラウドファンディングが大成功！資産が最下位の人に1億5,000万円。', e: { lastGift: 15000 } },
   { id: 'crash', t: '株価が大暴落。全員、手持ちのお金の3割を募金箱へ。', e: { allCashPct: 30 } },
   { id: 'swap', t: '世紀の大どんでん返し！資産1位と最下位の人の手持ちのお金が、そっくり入れかわる。', e: { swapTopLast: true } },
-  { id: 'sale', t: '大型スーパーが開店。今月はどこかの町の家賃が2倍。', e: { boost: true } },
+  { id: 'sale', t: '大型スーパーが開店。今月はどこかの色の家賃が2倍。', e: { boost: true } },
   { id: 'mayor', t: '区がまちづくりの新しい計画を発表。資産が最下位の人が、再開発する色を1つ選ぶ（★が1つ増える）。', e: { lastZone: true } }
 ];
 const DECKS = { kairan: KAIRAN, omikuji: OMIKUJI };
@@ -566,11 +624,11 @@ function shuffleS(S, a) { for (let i = a.length - 1; i > 0; i--) { const j = Mat
 /* ---------- state ---------- */
 function newState(opts) {
   return {
-    v: 4, ver: 1, code: opts.code || '', status: 'lobby', hostUid: opts.hostUid || null,
+    v: 12, ver: 1, code: opts.code || '', status: 'lobby', hostUid: opts.hostUid || null,
     rounds: opts.rounds === undefined ? 20 : opts.rounds, rs: (opts.seed >>> 0) || 1,
     players: [], own: new Array(N_SQ).fill(-1), lvl: new Array(N_SQ).fill(0), mort: new Array(N_SQ).fill(0),
     turn: 0, round: 1, phase: 'lobby', again: false, doubles: 0, dice: [0, 0], rollN: 0,
-    buy: null, debts: [], resume: null, offer: null, offerN: 0, pot: 0, outN: 0, asks: {},
+    buy: null, debts: [], resume: null, offer: null, offerN: 0, pot: 0, outN: 0, asks: {}, hist: [],
     zone: new Array(GROUPS.length).fill(0), zonePick: null, dream: DREAM_BASE, mfx: {}, news: [],
     decks: { kairan: [], omikuji: [], news: [] }, log: [], logN: 0, ev: [], evN: 0,
     ack: {}, nack: {}, result: null, updatedAt: 0
@@ -580,7 +638,7 @@ function addPlayer(S, { nick, cpu, uid }) {
   if (S.status !== 'lobby' || S.players.length >= MAX_SEATS) return -1;
   const used = new Set(S.players.map(p => p.color));
   const color = COLORS.find(c => !used.has(c)) || COLORS[0];
-  S.players.push({ nick: cleanNick(nick) || (cpu ? 'CPU' : 'だれか'), cpu: !!cpu, uid: uid || null, color, money: START_MONEY, pos: 0, jail: false, jailTries: 0, tickets: 0, out: false, outAt: 0 });
+  S.players.push({ nick: cleanNick(nick) || (cpu ? 'CPU' : 'だれか'), cpu: !!cpu, uid: uid || null, color, money: START_MONEY, pos: 0, jail: false, jailTries: 0, tickets: 0, out: false, outAt: 0, lastMonths: 0 });
   return S.players.length - 1;
 }
 function cleanNick(s) { return Array.from(String(s || '')).filter(ch => { const c = ch.codePointAt(0); return !(c < 32 || (c >= 0x7f && c <= 0x9f) || (c >= 0x200b && c <= 0x200f) || (c >= 0x2028 && c <= 0x202e) || (c >= 0x2060 && c <= 0x206f) || c === 0xfeff); }).join('').trim().slice(0, 10); }
@@ -591,11 +649,20 @@ function startGame(S) {
   S.decks.omikuji = shuffleS(S, OMIKUJI.map((_, i) => i));
   S.decks.news = shuffleS(S, NEWS.map((_, i) => i));
   for (const P of S.players) { P.money = START_MONEY; P.pos = 0; }
+  S.hist = []; snapWorth(S, 1);
   logS(S, -1, `対局開始。全員${yen(START_MONEY)}から。${S.rounds ? S.rounds + '周目（' + monthName(S.rounds) + '）が終わるまで' : '最後のひとりになるまで'}。`);
   ev(S, { t: 'start' });
   ev(S, { t: 'month', m: 0, round: 1, id: 'start' });
   beginTurn(S);
   return true;
+}
+// 資産の推移: everyone's 資産 at the start of each lap (a player who went bankrupt shows 0 once, then null)
+function snapWorth(S, r, end) {
+  if (!S.hist) S.hist = [];
+  const prev = S.hist.length ? S.hist[S.hist.length - 1].w : null;
+  const w = S.players.map((P, p) => (P.out ? (prev && (prev[p] === null || prev[p] === 0) ? null : 0) : netWorth(S, p)));
+  const h = { r, w }; if (end) h.end = 1;
+  if (S.hist.length && S.hist[S.hist.length - 1].r === r) S.hist[S.hist.length - 1] = h; else S.hist.push(h);
 }
 function logS(S, p, t) { S.logN++; S.log.push({ n: S.logN, p, t }); if (S.log.length > 60) S.log.shift(); }
 function ev(S, e) { e.n = ++S.evN; S.ev.push(e); if (S.ev.length > 180) S.ev.splice(0, S.ev.length - 180); }
@@ -616,30 +683,42 @@ function groupHasMort(S, g) { return GROUP_SQ[g].some(i => S.mort[i]); }
 const zoneLvl = (S, g) => (S.zone && S.zone[g]) || 0;
 const zoneOpen = S => GROUPS.some((_, g) => zoneLvl(S, g) < MAX_ZONE);
 function zoneOf(S, i) { const s = BOARD[i]; return s.k === 'prop' ? zoneLvl(S, s.g) : 0; }
-// the cost of putting up level l (1-4 a house, 5 the mansion)
-function buildCost(i, l) { const s = BOARD[i]; if (s.k !== 'prop') return 0; return l >= 5 ? GROUPS[s.g].mansion : GROUPS[s.g].house; }
-// what was spent on the buildings standing at level l
+// 時価 (the current price). A redevelopment ★ multiplies the land, the houses and the mansions alike by 1 + 0.5★.
+// Land: bought, sold to the bank and counted in 資産 at 時価. Houses and mansions: built at 時価, but, as in
+// Monopoly, the bank buys them back for half (and 資産 counts that half, so 資産 is still what selling raises).
+const zoneValMult = lv => 1 + 0.5 * lv; // ★1 x1.5, ★2 x2, ★3 x2.5
+function landPrice(S, i) { const s = BOARD[i]; return s.k === 'prop' ? round10(s.price * zoneValMult(zoneOf(S, i))) : s.price; }
+const bldMult = (S, i) => zoneValMult(zoneOf(S, i));
+// what it costs now to put up level l (1-4 a house, 5 the mansion); the bank pays half of it when it is sold
+const BLD_SALE = 0.5;
+function buildCost(S, i, l) { const s = BOARD[i]; if (s.k !== 'prop') return 0; return (l >= 5 ? GROUPS[s.g].mansion : GROUPS[s.g].house) * bldMult(S, i); }
+function sellBldValue(S, i, l) { return round10(buildCost(S, i, l) * BLD_SALE); }
+// the base cost of the buildings at level l (before redevelopment)
 function invested(i, l) { const s = BOARD[i]; if (s.k !== 'prop' || l <= 0) return 0; const G = GROUPS[s.g]; return l >= 5 ? 4 * G.house + G.mansion : l * G.house; }
-// a redevelopment ★ raises the land by half and the buildings by their whole cost
-function landPrice(S, i) { const s = BOARD[i]; return s.k === 'prop' ? round10(s.price * (1 + 0.5 * zoneOf(S, i))) : s.price; }
-function bldValue(S, i) { return invested(i, S.lvl[i]) * (1 + zoneOf(S, i)); }
-function sellBldValue(i, l) { return round10(buildCost(i, l) / 2); }
-function sellValue(S, i) { return round10(landPrice(S, i) * SELL_RATE - (S.mort[i] ? BOARD[i].price * UNMORT_RATE : 0)); }
-function mortValue(i) { return round10(BOARD[i].price * MORT_RATE); }
-function unmortCost(i) { return round10(BOARD[i].price * UNMORT_RATE); }
+// 時価 of everything standing on the square = the sum of buildCost over its levels (used for the taxes)
+function bldValue(S, i) { return invested(i, S.lvl[i]) * bldMult(S, i); }
+// what the bank pays for everything standing on the square, sold level by level (counted in 資産)
+function bldSaleValue(S, i) { let v = 0; for (let l = 1; l <= S.lvl[i]; l++) v += sellBldValue(S, i, l); return v; }
+// a mortgage lends half the land's 時価; S.mort[i] keeps the amount lent, and lifting it costs that plus 10%
+function mortValue(S, i) { return round10(landPrice(S, i) * MORT_RATE); }
+function mortDebt(S, i) { return S.mort[i] ? round10(S.mort[i] * MORT_FEE) : 0; }
+function unmortCost(S, i) { return mortDebt(S, i); }
+// the bank buys land at its 時価 and keeps back what is owed on it
+function sellValue(S, i) { return landPrice(S, i) - mortDebt(S, i); }
 function levelsOf(S, p) { let n = 0; for (const i of ownedBy(S, p)) n += S.lvl[i]; return n; }
+// 資産 = cash + land at 時価 + buildings at what the bank pays for them − what is owed on mortgages
+//      = the money a player could raise by selling it all
 function netWorth(S, p) {
   let w = S.players[p].money;
-  for (const i of ownedBy(S, p)) w += landPrice(S, i) - (S.mort[i] ? unmortCost(i) : 0) + bldValue(S, i);
+  for (const i of ownedBy(S, p)) w += landPrice(S, i) - mortDebt(S, i) + bldSaleValue(S, i);
   return w;
 }
 function maxRaise(S, p) {
   let v = 0;
-  for (const i of ownedBy(S, p)) { for (let l = S.lvl[i]; l > 0; l--) v += sellBldValue(i, l); v += Math.max(sellValue(S, i), 0); }
+  for (const i of ownedBy(S, p)) v += bldSaleValue(S, i) + Math.max(sellValue(S, i), 0);
   return v;
 }
 function assetValue(S, p) { let v = 0; for (const i of ownedBy(S, p)) v += landPrice(S, i) + bldValue(S, i); return v; }
-function propTax(S, p) { return round10(assetValue(S, p) * PROP_TAX); }
 // richest first; ties keep seat order
 function ranking(S) { return S.players.map((P, p) => ({ p, w: netWorth(S, p) })).filter(x => !S.players[x.p].out).sort((a, b) => b.w - a.w || a.p - b.p); }
 function lastPlace(S) { const r = ranking(S); if (r.length < 2 || r[0].w === r[r.length - 1].w) return -1; return r[r.length - 1].p; }
@@ -647,20 +726,33 @@ function topPlace(S) { const r = ranking(S); if (r.length < 2 || r[0].w === r[r.
 function railCount(S, o) { return RAIL_SQ.filter(j => S.own[j] === o).length; }
 // whoever holds all four lines (none of them mortgaged) runs the 葛飾交通網
 function networkOwner(S) { const o = S.own[RAIL_SQ[0]]; if (o < 0 || isOut(S, o)) return -1; return RAIL_SQ.every(j => S.own[j] === o && !S.mort[j]) ? o : -1; }
-// what multiplies a rent right now: redevelopment, this month's event and this month's news
+// what multiplies a rent right now: 地価の高騰期, redevelopment, this month's event and news.
+// multipliers multiply together. 山本亭 is not affected: its fee has its own rate (see yamaRate)
+const zoneRentMult = lv => (lv ? 1.5 + 0.5 * lv : 1); // ★1 x2, ★2 x2.5, ★3 x3
+// 地価の高騰期 (only in a game to the last player): x1.5 from lap 25, x2.25 from lap 37, ...
+function escMult(S) { const r = S.round || 1; return S.rounds === 0 && r >= ESC_FROM ? Math.pow(ESC_X, Math.floor((r - ESC_FROM) / 12) + 1) : 1; }
 function rentMult(S, i) {
-  const s = BOARD[i]; let m = 1;
-  if (s.k === 'prop' && zoneLvl(S, s.g)) m *= 1.5 + 0.5 * zoneLvl(S, s.g); // ★1 x2, ★2 x2.5, ★3 x3
-  const id = S.round ? MONTH_EV[monthIndex(S.round)].id : '';
-  if (s.k === 'prop' && id === 'shobu' && s.g === 3) m *= 2;
-  if (s.k === 'prop' && id === 'hanabi' && s.g === 4) m *= 2;
-  if (id === 'gw' && ((s.k === 'prop' && s.g === 0) || s.k === 'yama')) m *= 2;
-  if (id === 'moving') m *= 1.5;
-  const fx = S.mfx || {};
-  if (fx.tv && ((s.k === 'prop' && s.g === 4) || s.k === 'yama')) m *= 3;
-  if (fx.boost !== undefined && s.k === 'prop' && s.g === fx.boost) m *= 2;
-  if (fx.tori !== undefined && S.own[i] === fx.tori) m *= 3;
+  const s = BOARD[i];
+  if (s.k === 'yama') return 1;
+  let m = escMult(S);
+  const id = S.round ? MONTH_EV[monthIndex(S.round)].id : '', fx = S.mfx || {};
+  if (s.k === 'prop') {
+    m *= zoneRentMult(zoneLvl(S, s.g));
+    if (id === 'shobu' && s.g === 3) m *= 2;
+    if (id === 'hanabi' && s.g === 4) m *= 2;
+    if (id === 'gw' && s.g === 0) m *= 2;
+    if (id === 'moving') m *= 1.5;
+    if (fx.tv && s.g === 4) m *= 3;
+    if (fx.boost !== undefined && s.g === fx.boost) m *= 2;
+  }
+  if (fx.tori !== undefined && S.own[i] === fx.tori && (s.k === 'prop' || s.k === 'rail')) m *= 3;
   return m;
+}
+// 山本亭: the dice total x 2.5% (5% to 30%); in Golden Week and during the TV feature it is 30% whatever the dice
+function yamaRate(S, diceTotal) {
+  const id = S.round ? MONTH_EV[monthIndex(S.round)].id : '', fx = S.mfx || {};
+  if (id === 'gw' || fx.tv) return YAMA_MAX;
+  return Math.min(YAMA_MAX, Math.max(2, diceTotal || 7) * YAMA_STEP);
 }
 // payer is needed for 山本亭, whose fee is a share of the visitor's wealth
 function baseRent(S, i, diceTotal, payer) {
@@ -668,7 +760,7 @@ function baseRent(S, i, diceTotal, payer) {
   if (s.k === 'prop') { const l = S.lvl[i]; if (l > 0) return s.rents[l]; return groupComplete(S, s.g, o) ? s.rents[0] * 2 : s.rents[0]; }
   if (s.k === 'rail') return RAIL_RENT[railCount(S, o)] * (s.bus && hasNews(S, 'brt') ? 2 : 1);
   if (s.k === 'util') return (diceTotal || 7) * UTIL_X;
-  if (s.k === 'yama') return payer === undefined || !S.players ? 0 : Math.max(1000, round10(netWorth(S, payer) * YAMA_PCT / 100));
+  if (s.k === 'yama') return payer === undefined || !S.players ? 0 : Math.max(YAMA_MIN, round10(netWorth(S, payer) * yamaRate(S, diceTotal) / 100));
   return 0;
 }
 function rentFor(S, i, diceTotal, payer) { return round10(baseRent(S, i, diceTotal, payer) * rentMult(S, i)); }
@@ -684,7 +776,7 @@ function xfer(S, from, to, amt, why, sq) {
 }
 function setOwn(S, i, p) { if (S.own[i] === p) return; const from = S.own[i]; S.own[i] = p; ev(S, { t: 'own', sq: i, p, from }); }
 function setLvl(S, i, l, why) { if (S.lvl[i] === l) return; S.lvl[i] = l; const e = { t: 'lvl', sq: i, l }; if (why) e.why = why; ev(S, e); }
-function setMort(S, i, on) { on = on ? 1 : 0; if (S.mort[i] === on) return; S.mort[i] = on; ev(S, { t: 'mort', sq: i, on }); }
+function setMort(S, i, amt) { amt = amt > 0 ? Math.round(amt) : 0; if ((S.mort[i] || 0) === amt) return; S.mort[i] = amt; ev(S, { t: 'mort', sq: i, on: amt }); }
 // a charge is paid at once when possible; otherwise it waits in the debt queue until the debtor settles it
 function charge(S, p, to, amt, why, sq) {
   amt = Math.round(amt); if (amt <= 0) return true;
@@ -709,7 +801,7 @@ function zoneUp(S, g, by) {
   if (zoneLvl(S, g) >= MAX_ZONE) { logS(S, -1, `「${GROUPS[g].n}」はもう再開発の★が${MAX_ZONE}つ`); return false; }
   S.zone[g] = zoneLvl(S, g) + 1;
   ev(S, { t: 'zone', g, p: by, lvl: S.zone[g] });
-  logS(S, by, `「${GROUPS[g].n}」が再開発★${S.zone[g]}に。家賃${1.5 + 0.5 * S.zone[g]}倍、土地${1 + 0.5 * S.zone[g]}倍、建物${1 + S.zone[g]}倍の値打ち`);
+  logS(S, by, `「${GROUPS[g].n}」が再開発★${S.zone[g]}に。家賃×${zoneRentMult(S.zone[g])}、時価（土地・家・マンション）×${zoneValMult(S.zone[g])}`);
   return true;
 }
 
@@ -747,7 +839,7 @@ function drawCard(S, deck) {
   if (!DECKS[deck][id].e.ticket) d.push(id);
   return id;
 }
-const FEE_WORD = { prop: '家賃', rail: '運賃', util: '水道料金', yama: '入館料' };
+const FEE_WORD = { prop: '家賃', rail: '運賃', util: '料金', yama: '入館料' };
 function land(S, p, ctx) {
   const P = S.players[p]; if (P.out) return;
   ctx = ctx || {}; ctx.depth = (ctx.depth || 0) + 1; if (ctx.depth > 4) return;
@@ -767,19 +859,13 @@ function land(S, p, ctx) {
       logS(S, p, `${nm}の${FEE_WORD[s.k]}${yen(rent)}を${nameOf(S, o)}へ`);
       charge(S, p, o, rent, `${nm}の${FEE_WORD[s.k]}`, i);
     }
-    // 買い取り: double the price, or the list price with the 下町パス; land under a mortgage can always be taken
+    // 買い取り: double the 時価, or the 時価 with the 下町パス; land under a mortgage can always be taken
     let price = 0;
-    if (S.mort[i]) price = 2 * listPrice(S, i);
-    else if (pass) price = listPrice(S, i);
+    if (pass) price = listPrice(S, i);
+    else if (S.mort[i]) price = 2 * listPrice(S, i);
     else if (s.k === 'prop' && !(groupComplete(S, s.g, o) || groupHasHouses(S, s.g))) price = 2 * listPrice(S, i);
     else if (s.k === 'rail' && railCount(S, o) < RAIL_SQ.length) price = 2 * listPrice(S, i);
-    if (price) S.buy = { sq: i, price, from: o, mort: S.mort[i] ? 1 : 0, pass: pass && !S.mort[i] ? 1 : 0 };
-    return;
-  }
-  if (s.k === 'tax') {
-    const amt = s.id === 'juumin' ? s.amt : propTax(S, p);
-    if (amt > 0) { logS(S, p, `${s.n}${yen(amt)}を募金箱へ`); charge(S, p, POT, amt, s.n, i); }
-    else logS(S, p, `${s.n}はかからなかった（土地を持っていない）`);
+    if (price) S.buy = { sq: i, price, from: o, mort: S.mort[i] ? 1 : 0, pass: pass ? 1 : 0 };
     return;
   }
   if (s.k === 'card') {
@@ -803,11 +889,19 @@ function swapCash(S, a, b, why) {
   if (d > 0) xfer(S, a, b, d, why); else if (d < 0) xfer(S, b, a, -d, why);
   ev(S, { t: 'swap', p: a, q: b, kind: 'cash' });
 }
+// 大どんでん返し (a 回覧板 card and a 号外): the 1位 and the 最下位 swap their cash
+function swapTopLastCash(S) {
+  const top = topPlace(S), last = lastPlace(S);
+  if (top < 0 || last < 0) { logS(S, -1, 'まだ資産に差がないので、入れかえはなし'); return; }
+  if (S.players[top].money === S.players[last].money) { logS(S, -1, '手持ちが同じなので、入れかえはなし'); return; }
+  logS(S, -1, `${nameOf(S, top)}と${nameOf(S, last)}の手持ちのお金が入れかわった`);
+  swapCash(S, top, last, '手持ちの入れかえ');
+}
 function applyCard(S, p, e, ctx) {
   const P = S.players[p];
   if (e.gain) { xfer(S, BANK, p, e.gain, 'カード'); return; }
   if (e.dream) { payDream(S, p, 'おみくじの大大吉'); return; }
-  if (e.payPot) { charge(S, p, POT, e.payPot, 'カード'); return; }
+  if (e.payPot) { charge(S, p, POT, e.payPot, e.why || 'カード'); return; }
   if (e.collectEach) { S.players.forEach((Q, q) => { if (q !== p && !Q.out) charge(S, q, p, e.collectEach, 'お祝い・会費'); }); return; }
   if (e.payEach) { S.players.forEach((Q, q) => { if (q !== p && !Q.out) charge(S, p, q, e.payEach, 'おわび'); }); return; }
   if (e.perLevel) { const n = levelsOf(S, p); if (n) xfer(S, BANK, p, n * e.perLevel, '耐震化の助成金'); else logS(S, p, '建物がないので助成金はなし'); return; }
@@ -818,6 +912,7 @@ function applyCard(S, p, e, ctx) {
     return;
   }
   if (e.ticket) { P.tickets++; return; }
+  if (e.swapTopLast) { swapTopLastCash(S); return; }
   if (e.swapCash) {
     const rich = S.players.map((Q, q) => q).filter(q => q !== p && !S.players[q].out).sort((a, b) => S.players[b].money - S.players[a].money)[0];
     if (rich === undefined || S.players[rich].money <= P.money) { logS(S, p, '手持ちがいちばん多いので、入れかえはなし'); return; }
@@ -825,48 +920,45 @@ function applyCard(S, p, e, ctx) {
     swapCash(S, rich, p, '手持ちの入れかえ');
     return;
   }
-  if (e.swapTopLast) {
-    const r = ranking(S); if (r.length < 2) return;
-    const a = r[0].p, b = r[r.length - 1].p;
-    if (S.players[a].money === S.players[b].money) { logS(S, -1, '手持ちが同じなので入れかえはなし'); return; }
-    logS(S, -1, `${nameOf(S, a)}と${nameOf(S, b)}の手持ちのお金が入れかわった`);
-    swapCash(S, a, b, '手持ちの入れかえ');
-    return;
-  }
   if (e.swapLand) {
     const top = topPlace(S);
-    if (top < 0 || top === p) { logS(S, p, '自分が1位なので、取りかえはなし'); return; }
+    if (top < 0) { logS(S, p, 'まだ資産に差がないので、取りかえはなし'); return; }
+    if (top === p) { logS(S, p, '自分が1位なので、取りかえはなし'); return; }
     const theirs = looseLands(S, top).sort((a, b) => landPrice(S, b) - landPrice(S, a))[0];
     if (theirs === undefined) { logS(S, p, `${nameOf(S, top)}に取りかえられる土地がなかった`); return; }
     const mine = looseLands(S, p).sort((a, b) => landPrice(S, a) - landPrice(S, b))[0];
     setOwn(S, theirs, p); if (mine !== undefined) setOwn(S, mine, top);
     ev(S, { t: 'swap', p, q: top, kind: 'land', a: theirs, b: mine === undefined ? -1 : mine });
-    logS(S, p, mine !== undefined ? `${nameOf(S, top)}の${sqName(S, theirs)}と自分の${sqName(S, mine)}を取りかえた` : `土地がなかったので、${nameOf(S, top)}の${sqName(S, theirs)}をそのままもらった`);
+    logS(S, p, mine !== undefined ? `${nameOf(S, top)}の${sqName(S, theirs)}と自分の${sqName(S, mine)}を取りかえた` : `出せる土地がなかったので、${nameOf(S, top)}の${sqName(S, theirs)}をそのままもらった`);
     return;
   }
   if (e.buyFromTop) {
     const top = topPlace(S);
-    if (top < 0 || top === p) { logS(S, p, '自分が1位なので、引き取りはなし'); return; }
+    if (top < 0) { logS(S, p, 'まだ資産に差がないので、引き取りはなし'); return; }
+    if (top === p) { logS(S, p, '自分が1位なので、引き取りはなし'); return; }
     const j = looseLands(S, top).sort((a, b) => landPrice(S, a) - landPrice(S, b))[0];
     if (j === undefined) { logS(S, p, `${nameOf(S, top)}に引き取れる土地がなかった`); return; }
     const price = round10(landPrice(S, j) * e.buyFromTop);
     if (P.money < price) { logS(S, p, `お金が足りず、${sqName(S, j)}を引き取れなかった`); return; }
-    xfer(S, p, top, price, '区画整理の引き取り', j); setOwn(S, j, p);
+    const debt = mortDebt(S, j);
+    if (debt) { xfer(S, p, BANK, debt, '抵当の返済', j); setMort(S, j, 0); }
+    xfer(S, p, top, price - debt, '区画整理の引き取り', j); setOwn(S, j, p);
     logS(S, p, `${nameOf(S, top)}の${sqName(S, j)}を${yen(price)}で引き取った`);
     return;
   }
   if (e.zoneChoice) {
     if (zoneOpen(S)) { S.zonePick = { p, from: 'card' }; return; }
-    xfer(S, BANK, p, 3000, 'カード'); return;
+    logS(S, p, `どの色も★${MAX_ZONE}なので、かわりに3,000万円`); xfer(S, BANK, p, 3000, '再開発のかわり'); return;
   }
   if (e.fromTop) {
-    const top = ranking(S)[0].p;
-    if (top === p) { S.players.forEach((Q, q) => { if (q !== p && !Q.out) charge(S, p, q, 3000, 'おすそわけ'); }); return; }
+    const top = topPlace(S);
+    if (top < 0) { logS(S, p, 'まだ資産に差がないので、おすそわけはなし'); return; }
+    if (top === p) { S.players.forEach((Q, q) => { if (q !== p && !Q.out) charge(S, p, q, e.topGives, 'おすそわけ'); }); return; }
     charge(S, top, p, e.fromTop, 'おすそわけ'); return;
   }
   if (e.again) { if (!P.jail) { S.again = true; logS(S, p, 'もう一度サイコロをふれる'); } return; }
   if (e.worthPct) { const amt = round10(netWorth(S, p) * e.worthPct / 100); if (amt > 0) charge(S, p, POT, amt, '税務調査'); return; }
-  if (e.assetTax) { const amt = round10(assetValue(S, p) * e.assetTax / 100); if (amt > 0) charge(S, p, POT, amt, '固定資産税の見直し'); else logS(S, p, '土地がないので税金はなし'); return; }
+  if (e.assetTax) { const amt = round10(assetValue(S, p) * e.assetTax / 100); if (amt > 0) charge(S, p, POT, amt, '固定資産税'); else logS(S, p, '土地がないので税金はなし'); return; }
   if (e.cashPct) { const amt = round10(P.money * e.cashPct / 100); if (amt > 0) xfer(S, p, POT, amt, e.cashPct >= 50 ? '株の大暴落' : '空き巣'); return; }
   if (e.selfStorm) {
     let hit = 0;
@@ -878,18 +970,19 @@ function applyCard(S, p, e, ctx) {
     const mine = ownedBy(S, p).sort((a, b) => (landPrice(S, b) + bldValue(S, b)) - (landPrice(S, a) + bldValue(S, a)));
     if (!mine.length) { logS(S, p, '土地を持っていないので、損はなし'); return; }
     const i = mine[0], s = BOARD[i];
-    // the buildings of its colour go first, at half their cost, so the colour stays even
-    if (s.k === 'prop') for (const j of GROUP_SQ[s.g]) if (S.own[j] === p && S.lvl[j] > 0) { let v = 0; for (let l = S.lvl[j]; l > 0; l--) v += sellBldValue(j, l); setLvl(S, j, 0); xfer(S, BANK, p, v, '建物を手放す', j); }
-    const v = Math.max(0, round10(landPrice(S, i) * 0.5 - (S.mort[i] ? unmortCost(i) : 0)));
-    setMort(S, i, 0); setOwn(S, i, -1); if (v) xfer(S, BANK, p, v, '土地を半値で手放す', i);
-    logS(S, p, `${sqName(S, i)}を半値で手放した`);
+    // the buildings of its colour go first, at half their 時価, so the colour stays even
+    if (s.k === 'prop') for (const j of GROUP_SQ[s.g]) if (S.own[j] === p && S.lvl[j] > 0) { const v = bldSaleValue(S, j); setLvl(S, j, 0); xfer(S, BANK, p, v, '建物を手放す', j); }
+    const debt = mortDebt(S, i), v = Math.max(0, round10(landPrice(S, i) * 0.5) - debt);
+    setMort(S, i, 0); setOwn(S, i, -1); if (v) xfer(S, BANK, p, v, '土地を時価の半額で手放す', i);
+    logS(S, p, v ? `${sqName(S, i)}を${yen(v)}で手放した（時価の半額${debt ? 'から抵当の返済を引いた額' : ''}）` : `${sqName(S, i)}を手放した（抵当の返済で、手元に残るお金はなし）`);
     return;
   }
-  if (e.perProp) { const n = ownedBy(S, p).length; if (n) { xfer(S, BANK, p, n * e.perProp, '地価の高騰'); logS(S, p, `地価の高騰で${yen(n * e.perProp)}`); } return; }
+  if (e.perProp) { const n = ownedBy(S, p).length; if (n) { xfer(S, BANK, p, n * e.perProp, '土地の値上がり'); logS(S, p, `土地の値上がりで${yen(n * e.perProp)}`); } return; }
   if (e.jail) { goJail(S, p); return; }
   if (e.moveTo !== undefined) {
+    const pay = lastPlace(S) === p ? SALARY * 2 : SALARY; // what passing 出発 pays this player
     moveTo(S, p, e.moveTo);
-    if (e.bonus) xfer(S, BANK, p, SALARY, '防災訓練（給料2倍）');
+    if (e.bonus) xfer(S, BANK, p, pay, '防災訓練（給料をもう1回分）');
     land(S, p, ctx); return;
   }
   if (e.fwd) { moveBy(S, p, e.fwd); land(S, p, ctx); return; }
@@ -930,7 +1023,7 @@ function applyNews(S, k) {
   if (e.topTax) { if (top >= 0) { const amt = round10(netWorth(S, top) * e.topTax / 100); if (amt > 0) charge(S, top, POT, amt, '国税の一斉調査'); } return; }
   if (e.lastGift) { if (last >= 0) xfer(S, BANK, last, e.lastGift, 'クラウドファンディング'); return; }
   if (e.allCashPct) { S.players.forEach((Q, q) => { if (!Q.out) { const amt = round10(Q.money * e.allCashPct / 100); if (amt > 0) xfer(S, q, POT, amt, '株価の大暴落'); } }); return; }
-  if (e.swapTopLast) { if (r.length >= 2 && S.players[r[0].p].money !== S.players[r[r.length - 1].p].money) swapCash(S, r[0].p, r[r.length - 1].p, '手持ちの入れかえ'); return; }
+  if (e.swapTopLast) { swapTopLastCash(S); return; }
   if (e.lastZone) { const p = last >= 0 ? last : r[r.length - 1].p; if (zoneOpen(S) && p !== undefined) S.zonePick = { p, from: 'news' }; return; }
 }
 
@@ -938,11 +1031,19 @@ function applyNews(S, k) {
 // runs when a new month (a new lap of turns) begins; choices and debts are taken care of afterwards
 function startMonth(S) {
   const m = monthIndex(S.round), E = MONTH_EV[m];
+  snapWorth(S, S.round);
   S.mfx = {};
   xfer(S, BANK, DREAM, DREAM_STEP, 'ドリームの積み立て');
   ev(S, { t: 'month', m, round: S.round, id: E.id });
   logS(S, -1, `${MONTHS[m]}「${E.n}」`);
+  // 地価の高騰期: every April from the 3rd year, in a game to the last player
+  if (S.rounds === 0 && S.round >= ESC_FROM && (S.round - ESC_FROM) % 12 === 0) {
+    const x = escMult(S); ev(S, { t: 'esc', x });
+    logS(S, -1, `地価の高騰期。家賃・運賃・浄水場の料金がさらに1.5倍に（いまは元の×${fmtX(x)}）`);
+  }
   const r = ranking(S), top = topPlace(S), last = lastPlace(S);
+  // a month spent in last place earns tickets for the next year-end lottery
+  if (last >= 0) S.players[last].lastMonths = (S.players[last].lastMonths || 0) + 1;
   if (E.id === 'hanabi') {
     if (top >= 0) { const amt = round10(S.players[top].money * 0.2); if (amt > 0) { xfer(S, top, POT, amt, '花火大会の協賛金'); logS(S, top, `資産1位なので花火大会の協賛金${yen(amt)}を募金箱へ`); } }
   } else if (E.id === 'heat') {
@@ -953,23 +1054,25 @@ function startMonth(S) {
     ev(S, { t: 'typhoon', river, groups });
     let hit = 0;
     for (const g of groups) for (const i of GROUP_SQ[g]) if (S.lvl[i] > 0) { setLvl(S, i, S.lvl[i] - 1, 'typhoon'); hit++; }
-    logS(S, -1, `台風で${river}があふれた。${groups.map(g => GROUPS[g].n).join('と')}の建物が${hit ? hit + 'か所でこわれた' : 'なくて被害なし'}`);
+    logS(S, -1, `台風で${river}があふれた。${groups.map(g => `「${GROUPS[g].n}」`).join('')}の建物が${hit ? hit + 'か所でこわれた' : 'なくて被害なし'}`);
   } else if (E.id === 'tori') {
-    if (last >= 0) { S.mfx.tori = last; logS(S, last, '酉の市の熊手。今月は家賃収入が3倍'); }
+    if (last >= 0) { S.mfx.tori = last; logS(S, last, '酉の市の熊手。今月は受け取る家賃と運賃が3倍'); }
   } else if (E.id === 'jumbo') {
     if (r.length >= 2) {
-      // tickets: the richest holds 1, the next 2, ... the poorest holds the most
-      const tickets = r.map((x, k) => ({ p: x.p, n: k + 1 }));
+      // tickets: one for everyone, two more for every month in last place since the last draw
+      const tickets = r.map(x => { const m = S.players[x.p].lastMonths || 0; return { p: x.p, n: DREAM_TICKET_BASE + DREAM_TICKET_PER_MONTH * m, m }; });
       const total = tickets.reduce((v, x) => v + x.n, 0);
       let roll = Math.floor(rand(S) * total), winner = tickets[0].p;
       for (const x of tickets) { if (roll < x.n) { winner = x.p; break; } roll -= x.n; }
+      logS(S, -1, `年末の大抽選の抽選券：${tickets.map(x => `${nameOf(S, x.p)} ${x.n}枚${x.m ? `（最下位${x.m}か月）` : ''}`).join('、')}`);
       ev(S, { t: 'jumbo', tickets, winner, amt: S.dream });
       payDream(S, winner, '年末の大抽選');
+      S.players.forEach(P => { P.lastMonths = 0; });
     }
   } else if (E.id === 'hatsumode') {
     if (last >= 0) { xfer(S, BANK, last, HATSU_GIFT, '初詣のご利益'); logS(S, last, `資産が最下位なので初詣のご利益${yen(HATSU_GIFT)}`); }
   } else if (E.id === 'setsubun') {
-    if (top >= 0) { logS(S, top, '節分の鬼の役。全員に2,000万円ずつ配る'); S.players.forEach((Q, q) => { if (q !== top && !Q.out) charge(S, top, q, SETSUBUN, '節分（鬼は外）'); }); }
+    if (top >= 0) { logS(S, top, '節分の鬼の役。ほかの全員に2,000万円ずつ配る'); S.players.forEach((Q, q) => { if (q !== top && !Q.out) charge(S, top, q, SETSUBUN, '節分（鬼は外）'); }); }
   } else if (E.id === 'zone' && S.round > 1) {
     const p = last >= 0 ? last : (r.length ? r[r.length - 1].p : -1);
     if (zoneOpen(S) && p >= 0) S.zonePick = { p, from: 'month' };
@@ -1035,11 +1138,12 @@ function nextTurn(S) {
 function bankrupt(S, p, to, why) {
   const P = S.players[p]; if (P.out) return;
   const toP = typeof to === 'number' && to >= 0 && !S.players[to].out && to !== p;
-  // buildings go back to the bank at half their cost
-  for (const i of ownedBy(S, p)) if (S.lvl[i] > 0) { let v = 0; for (let l = S.lvl[i]; l > 0; l--) v += sellBldValue(i, l); setLvl(S, i, 0); xfer(S, BANK, p, v, '建物を売る'); }
+  // the bank buys the buildings at half their 時価; the money and the land then go to whoever is owed
+  for (const i of ownedBy(S, p)) if (S.lvl[i] > 0) { const v = bldSaleValue(S, i); setLvl(S, i, 0); xfer(S, BANK, p, v, '建物を売る'); }
   if (P.money > 0) xfer(S, p, toP ? to : (to === POT ? POT : BANK), P.money, '破産');
   for (const i of ownedBy(S, p)) { if (toP) setOwn(S, i, to); else { setMort(S, i, 0); setOwn(S, i, -1); } }
   if (toP) S.players[to].tickets += P.tickets;
+  else if (P.tickets > 0) { const kd = KAIRAN.findIndex(c => c.e.ticket); if (kd >= 0 && !S.decks.kairan.includes(kd)) S.decks.kairan.push(kd); }
   P.money = 0; P.tickets = 0; P.out = true; P.jail = false; P.outAt = ++S.outN;
   ev(S, { t: 'out', p, to: toP ? to : BANK });
   logS(S, p, why || `${toP ? nameOf(S, to) + 'への' : ''}支払いができず、破産した`);
@@ -1051,6 +1155,7 @@ function bankrupt(S, p, to, why) {
 }
 function gameOver(S) {
   S.status = 'over'; S.phase = 'over'; S.offer = null; S.buy = null; S.debts = []; S.zonePick = null;
+  snapWorth(S, S.round + 1, true);
   const order = S.players.map((P, p) => ({ p, worth: P.out ? -1 : netWorth(S, p), outAt: P.outAt }));
   order.sort((a, b) => (b.worth - a.worth) || (b.outAt - a.outAt));
   S.result = order.map(x => ({ p: x.p, worth: Math.max(0, x.worth) }));
@@ -1078,7 +1183,7 @@ function canBuild(S, p, i) {
   if (S.turn !== p || !['roll', 'act'].includes(S.phase) || S.offer) return false;
   const l = S.lvl[i]; if (l >= 5) return false;
   if (GROUP_SQ[s.g].some(j => S.lvl[j] < l)) return false;
-  return S.players[p].money >= buildCost(i, l + 1);
+  return S.players[p].money >= buildCost(S, i, l + 1);
 }
 function canSellHouse(S, p, i) {
   const s = BOARD[i]; if (!s || s.k !== 'prop' || S.own[i] !== p || manager(S) !== p) return false;
@@ -1087,7 +1192,7 @@ function canSellHouse(S, p, i) {
 }
 function freeOfHouses(S, i) { const s = BOARD[i]; return !(s.k === 'prop' && groupHasHouses(S, s.g)); }
 function canMortgage(S, p, i) { const s = BOARD[i]; return !!s && OWNABLE(s) && S.own[i] === p && !S.mort[i] && freeOfHouses(S, i) && manager(S) === p; }
-function canUnmortgage(S, p, i) { const s = BOARD[i]; return !!s && OWNABLE(s) && S.own[i] === p && !!S.mort[i] && S.turn === p && ['roll', 'act', 'buy'].includes(S.phase) && !S.offer && S.players[p].money >= unmortCost(i); }
+function canUnmortgage(S, p, i) { const s = BOARD[i]; return !!s && OWNABLE(s) && S.own[i] === p && !!S.mort[i] && S.turn === p && ['roll', 'act', 'buy'].includes(S.phase) && !S.offer && S.players[p].money >= unmortCost(S, i); }
 function canSellLand(S, p, i) { const s = BOARD[i]; return !!s && OWNABLE(s) && S.own[i] === p && freeOfHouses(S, i) && manager(S) === p; }
 function tradeable(S, p, i) { const s = BOARD[i]; return !!s && OWNABLE(s) && S.own[i] === p && freeOfHouses(S, i); }
 function validOffer(S, o) {
@@ -1190,7 +1295,7 @@ function act(S, p, a) {
           if (S.own[sq] !== from || S.players[from].out || !!S.mort[sq] !== !!mort) { S.buy = null; S.phase = 'act'; return '買い取れなくなりました'; }
           if (mort) {
             // the bank is paid back first; the owner gets the rest and the land changes hands free of the mortgage
-            const debt = unmortCost(sq);
+            const debt = unmortCost(S, sq);
             xfer(S, p, BANK, debt, '抵当の返済', sq); xfer(S, p, from, price - debt, '買い取り', sq); setMort(S, sq, 0);
           } else xfer(S, p, from, price, '買い取り', sq);
           setOwn(S, sq, p);
@@ -1201,22 +1306,22 @@ function act(S, p, a) {
     }
     case 'build': {
       if (!canBuild(S, p, i)) return '建てられません';
-      const c = buildCost(i, S.lvl[i] + 1); xfer(S, p, BANK, c, '建築費', i); setLvl(S, i, S.lvl[i] + 1);
+      const c = buildCost(S, i, S.lvl[i] + 1); xfer(S, p, BANK, c, '建築費', i); setLvl(S, i, S.lvl[i] + 1);
       logS(S, p, `${BOARD[i].n}に${S.lvl[i] === 5 ? 'マンション' : '家'}を建てた（${yen(c)}）`); return '';
     }
     case 'sellHouse': {
       if (!canSellHouse(S, p, i)) return '売れません';
-      const was = S.lvl[i], v = sellBldValue(i, was); setLvl(S, i, was - 1); xfer(S, BANK, p, v, '建物を売る', i);
+      const was = S.lvl[i], v = sellBldValue(S, i, was); setLvl(S, i, was - 1); xfer(S, BANK, p, v, '建物を売る', i);
       logS(S, p, `${BOARD[i].n}の${was === 5 ? 'マンション' : '家'}を売った（+${yen(v)}）`); return '';
     }
     case 'mortgage': {
       if (!canMortgage(S, p, i)) return '抵当に入れられません';
-      const v = mortValue(i); setMort(S, i, 1); xfer(S, BANK, p, v, '抵当', i);
+      const v = mortValue(S, i); setMort(S, i, v); xfer(S, BANK, p, v, '抵当', i);
       logS(S, p, `${sqName(S, i)}を抵当に入れた（+${yen(v)}）`); return '';
     }
     case 'unmortgage': {
       if (!canUnmortgage(S, p, i)) return '抵当を外せません';
-      const c = unmortCost(i); xfer(S, p, BANK, c, '抵当を外す', i); setMort(S, i, 0);
+      const c = unmortCost(S, i); xfer(S, p, BANK, c, '抵当を外す', i); setMort(S, i, 0);
       logS(S, p, `${sqName(S, i)}の抵当を外した（${yen(c)}）`); return '';
     }
     case 'sellLand': {
@@ -1239,6 +1344,24 @@ function act(S, p, a) {
       logS(S, p, `${d.why || '支払い'} ${yen(d.amt)}を${nameOf(S, d.to)}へ払った`);
       afterDebts(S); return '';
     }
+    case 'autoPay': {
+      // おまかせ: mortgage and sell in the CPU's order until the debt can be paid, then pay it
+      if (S.phase !== 'debt' || !S.debts.length || S.debts[0].p !== p) return 'no debt';
+      const d = S.debts[0];
+      if (P.money + maxRaise(S, p) < d.amt) return '全部売っても足りません';
+      // plan on a copy first, so that nothing is sold unless the whole plan pays the debt
+      const T = JSON.parse(JSON.stringify(S)), plan = [];
+      for (let k = 0; k < 300 && T.players[p].money < d.amt; k++) {
+        const step = cpuRaise(T, p, T.debts[0]);
+        if (!step || step.t === 'payDebt' || step.t === 'bankrupt' || act(T, p, step)) break;
+        plan.push(step);
+      }
+      if (T.players[p].money < d.amt) return 'お金を作りきれませんでした';
+      const n0 = S.evN;
+      for (const step of plan) { const e = act(S, p, step); if (e) return e; }
+      for (const e of S.ev) if (e.n > n0) e.quick = 1; // the screen runs through the selling quickly
+      return act(S, p, { t: 'payDebt' });
+    }
     case 'bankrupt': {
       if (S.phase !== 'debt' || !S.debts.length || S.debts[0].p !== p) return 'no debt';
       bankrupt(S, p, S.debts[0].to);
@@ -1247,18 +1370,84 @@ function act(S, p, a) {
     }
     case 'end': {
       if (S.turn !== p || S.phase !== 'act') return 'cannot end';
-      if (S.again && !P.jail) return 'ゾロ目なのでもう一度ふります';
+      if (S.again && !P.jail) return 'もう一度サイコロをふれます';
       nextTurn(S); return '';
     }
   }
   return 'unknown action';
 }
 
+/* ---------- older saved games ---------- */
+// v4 kept a mortgage as 1 (the loan was half the base price) and had no months in last place;
+// v5 priced buildings on a ★ colour at x(1+★); v6 had 整備 (lines, the waterworks and 山本亭), since withdrawn;
+// v8 bought buildings back at their full 時価; v8 and v9 had 競り (auctions), since withdrawn;
+// v10 still had the 住民税 and 固定資産税 squares; v11 had replaced three cards for a while.
+// quiet: an online guest's copy of a room whose host still runs an older page. The guest leaves the notes out of
+// the log; the host writes them once it reloads.
+function migrate(S, quiet) {
+  if (!S) return S;
+  const from = S.v;
+  if (S.v === 4) {
+    S.mort = S.mort.map((m, i) => (m ? round10(BOARD[i].price * MORT_RATE) : 0));
+    S.players.forEach(P => { if (P.lastMonths === undefined) P.lastMonths = 0; });
+    S.v = 5;
+  }
+  const playing = !quiet && S.status === 'playing' && Array.isArray(S.log);
+  if (S.v === 5) {
+    S.v = 6;
+    if (playing) logS(S, -1, `ルールの更新：再開発の★は、土地も家・マンションも同じ時価の倍率（×1.5／×2／×2.5）に${escMult(S) > 1 ? `。地価の高騰期で、家賃・運賃・浄水場の料金はいま×${fmtX(escMult(S))}` : ''}`);
+  }
+  if (S.v === 6) {
+    // 整備 is gone: the owner of an upgraded square gets its cost (half the price) back, so 資産 stays the same
+    if (S.up) {
+      const back = [];
+      S.up.forEach((u, i) => {
+        const o = S.own[i];
+        if (!u || o < 0 || !S.players[o] || S.players[o].out) return;
+        const c = round10(BOARD[i].price * 0.5); S.players[o].money += c; back.push(`${S.players[o].nick}に${yen(c)}（${BOARD[i].n}）`);
+      });
+      delete S.up;
+      if (playing && back.length) logS(S, -1, `ルールの更新：整備を取りやめ、整備費を払い戻した：${back.join('、')}`);
+    }
+    S.v = 7;
+  }
+  if (S.v === 7) {
+    S.hist = S.hist || [];
+    if (S.status === 'playing' && S.players) snapWorth(S, S.round);
+    S.v = 8;
+  }
+  if (S.v === 8) {
+    S.v = 9;
+    if (playing && S.lvl.some(l => l > 0)) logS(S, -1, 'ルールの更新：家・マンションは、銀行に売ると時価の半額に（資産も半額で数えます）');
+  }
+  if (S.v === 9) {
+    // 競り (state v8 and v9) was withdrawn: an auction under way is called off and the land stays vacant
+    if (S.auction || S.phase === 'auction') {
+      const sq = S.auction ? S.auction.sq : -1;
+      if (S.phase === 'auction') S.phase = 'act';
+      if (!quiet && Array.isArray(S.log) && sq >= 0) logS(S, -1, `ルールの更新：競りをやめたので、${sqName(S, sq)}は空き地のまま`);
+    }
+    delete S.auction;
+    S.v = 10;
+  }
+  if (S.v === 10) {
+    // the 住民税 and 固定資産税 squares became おみくじ and 回覧板; the card decks keep their size, so a shuffled deck still works
+    S.v = 11;
+    if (playing) logS(S, -1, 'ルールの更新：住民税と固定資産税のマスは、おみくじと回覧板のマスに（カードも一部見直し）');
+  }
+  if (S.v === 11) {
+    // v11 had replaced three cards (相続の大どんでん返し, 遺産2億円, おすそわけ1億円); they are back, in the same places in the decks
+    S.v = 12;
+    if (playing && from === 11) logS(S, -1, 'ルールの更新：「相続で大どんでん返し」「遺産2億円」「おすそわけ1億円」のカードを元に戻した');
+  }
+  return S;
+}
+
 /* ---------- computer players ---------- */
 function groupCount(S, g, p) { return GROUP_SQ[g].filter(j => S.own[j] === p).length; }
 function landValue(S, p, i, receiving) {
   const s = BOARD[i]; let x = landPrice(S, i);
-  if (S.mort[i]) x -= unmortCost(i) * 0.9;
+  if (S.mort[i]) x -= unmortCost(S, i) * 0.9;
   if (s.k === 'prop') {
     const others = GROUP_SQ[s.g].filter(j => j !== i);
     if (receiving && others.every(j => S.own[j] === p)) x *= 2.4;
@@ -1325,16 +1514,18 @@ function cpuReserve(S) { return S.round < 4 ? 5000 : 8000; }
 function cpuManage(S, p) {
   const P = S.players[p], reserve = cpuReserve(S);
   // lift mortgages on groups it owns entirely, on its lines and on the landmarks
-  for (const i of ownedBy(S, p)) if (S.mort[i] && canUnmortgage(S, p, i) && P.money - unmortCost(i) >= reserve + 3000) {
+  for (const i of ownedBy(S, p)) if (S.mort[i] && canUnmortgage(S, p, i) && P.money - unmortCost(S, i) >= reserve + 3000) {
     const s = BOARD[i]; if (s.k !== 'prop' || groupComplete(S, s.g, p)) return { t: 'unmortgage', sq: i };
   }
-  // build where the rent is highest first (redevelopment counts)
-  const groups = GROUPS.map((_, g) => g).filter(g => groupComplete(S, g, p));
+  // build where the rent is highest first (redevelopment counts); not in the last two laps of a timed game,
+  // where half of what a building costs would only come off 資産
+  const late = S.rounds && S.round > S.rounds - 2;
+  const groups = late ? [] : GROUPS.map((_, g) => g).filter(g => groupComplete(S, g, p));
   groups.sort((a, b) => (zoneLvl(S, b) - zoneLvl(S, a)) || (b - a));
   for (const g of groups) {
     const cand = GROUP_SQ[g].filter(i => canBuild(S, p, i));
     if (!cand.length) continue;
-    const i = cand[cand.length - 1], next = S.lvl[i] + 1, cost = buildCost(i, next);
+    const i = cand[cand.length - 1], next = S.lvl[i] + 1, cost = buildCost(S, i, next);
     if (P.money - cost >= (next === 5 ? reserve * 1.5 : reserve)) return { t: 'build', sq: i };
   }
   return null;
@@ -1344,14 +1535,35 @@ function cpuRaise(S, p, d) {
   if (P.money >= d.amt) return { t: 'payDebt' };
   const mine = ownedBy(S, p);
   const keep = i => (BOARD[i].k === 'prop' && groupComplete(S, BOARD[i].g, p)) || (BOARD[i].k === 'rail' && networkOwner(S) === p);
-  const loose = mine.filter(i => canMortgage(S, p, i) && !keep(i));
-  if (loose.length) { loose.sort((a, b) => rentFor(S, a, 7) - rentFor(S, b, 7) || BOARD[a].price - BOARD[b].price); return { t: 'mortgage', sq: loose[0] }; }
+  // selling at 時価 keeps 資産 the same, but a mortgage costs its 10% fee: take one only while
+  // everything this player still owes can be paid afterwards
+  const owe = Math.max(d.amt, S.debts.filter(x => x.p === p).reduce((v, x) => v + x.amt, 0));
+  const room = P.money + maxRaise(S, p) - owe;
+  const mortOk = i => canMortgage(S, p, i) && round10(mortValue(S, i) * MORT_FEE) - mortValue(S, i) <= room;
+  // what a square can bring in, even while mortgaged (山本亭 charges the one who stops, so count the richest rival);
+  // a land that completes a colour or the network counts double
+  const earn = i => {
+    const m = S.mort[i]; S.mort[i] = 0;
+    const r = BOARD[i].k !== 'yama' ? rentFor(S, i, 7) : Math.max(0, ...S.players.map((Q, q) => (q !== p && !Q.out ? rentFor(S, i, 7, q) : 0)));
+    S.mort[i] = m; return keep(i) ? 2 * r : r;
+  };
+  const loose = mine.filter(i => mortOk(i) && !keep(i));
+  if (loose.length) { loose.sort((a, b) => earn(a) - earn(b) || BOARD[a].price - BOARD[b].price); return { t: 'mortgage', sq: loose[0] }; }
   const houses = mine.filter(i => canSellHouse(S, p, i));
-  if (houses.length) { houses.sort((a, b) => sellBldValue(b, S.lvl[b]) - sellBldValue(a, S.lvl[a])); return { t: 'sellHouse', sq: houses[0] }; }
-  const rest = mine.filter(i => canMortgage(S, p, i));
+  // the buildings that bring in the least rent go first
+  if (houses.length) { houses.sort((a, b) => rentFor(S, a, 7) - rentFor(S, b, 7) || a - b); return { t: 'sellHouse', sq: houses[0] }; }
+  const rest = mine.filter(mortOk);
   if (rest.length) { rest.sort((a, b) => BOARD[a].price - BOARD[b].price); return { t: 'mortgage', sq: rest[0] }; }
+  // land goes last, the ones that bring in the least first; one land that covers the rest by itself is
+  // sold instead when it brings in less than the several it saves
   const lands = mine.filter(i => canSellLand(S, p, i) && sellValue(S, i) > 0);
-  if (lands.length) { lands.sort((a, b) => sellValue(S, b) - sellValue(S, a)); return { t: 'sellLand', sq: lands[0] }; }
+  if (lands.length) {
+    const short = d.amt - P.money;
+    lands.sort((a, b) => earn(a) - earn(b) || sellValue(S, a) - sellValue(S, b));
+    let got = 0, lost = 0; for (const i of lands) { if (got >= short) break; got += sellValue(S, i); lost += earn(i); }
+    const alone = lands.find(i => sellValue(S, i) >= short);
+    return { t: 'sellLand', sq: alone !== undefined && earn(alone) <= lost ? alone : lands[0] };
+  }
   return { t: 'bankrupt' };
 }
 // a CPU raises the colour where it stands to gain the most, or lets the chance pass when every colour helps a rival
@@ -2160,16 +2372,6 @@ const B3 = (() => {
       const stone = mesh(new T.CylinderGeometry(0.018, 0.024, 0.06, 6), mat('#a8a39a')); stone.position.set(0.02, 0.03, 0.15); grp.add(stone);
       const hat = mesh(new T.ConeGeometry(0.04, 0.03, 6), mat('#8f8a80')); hat.position.set(0.02, 0.075, 0.15); grp.add(hat);
       add(grp, 0, D - 0.37);
-    } else if (s.k === 'tax') {
-      const grp = new T.Group();
-      if (s.id === 'juumin') {
-        const b = mesh(new T.BoxGeometry(0.5, 0.26, 0.24), mat('#e7e1d4')); b.position.y = 0.13; grp.add(b);
-        const rf = mesh(new T.BoxGeometry(0.54, 0.03, 0.28), mat('#7b8790')); rf.position.y = 0.275; grp.add(rf);
-        for (let q = 0; q < 4; q++) { const w = mesh(new T.BoxGeometry(0.07, 0.05, 0.005), mat('#7fa6c2', { r: 0.2 })); w.position.set(-0.17 + q * 0.113, 0.17, 0.122); grp.add(w); }
-      } else {
-        for (let q = 0; q < 3; q++) for (let h = 0; h < 4 - q; h++) { const c = mesh(new T.CylinderGeometry(0.06, 0.06, 0.02, 18), mat('#d9ab35', { r: 0.35, m: 0.6 })); c.position.set(-0.12 + q * 0.13, 0.012 + h * 0.022, 0); grp.add(c); }
-      }
-      add(grp, 0, D - 0.36);
     } else if (s.k === 'go') {
       const sh = new T.Shape(); sh.moveTo(-0.5, -0.1); sh.lineTo(0.18, -0.1); sh.lineTo(0.18, -0.24); sh.lineTo(0.52, 0); sh.lineTo(0.18, 0.24); sh.lineTo(0.18, 0.1); sh.lineTo(-0.5, 0.1); sh.closePath();
       const arrow = mesh(new T.ExtrudeGeometry(sh, { depth: 0.04, bevelEnabled: false }), mat('#d8452f', { r: 0.5 }));
@@ -2257,10 +2459,10 @@ const B3 = (() => {
     if (OWNABLE(s)) {
       if (o < 0) info.line = yen(V ? landPrice(V, i) : s.price).replace('円', '');
       else if (mort) info.line = '抵当中';
-      else if (s.k === 'util') info.line = `目×${UTIL_X}万`;
-      else if (s.k === 'yama') info.line = '入館料 資産の5%';
+      else if (s.k === 'util') { const per = UTIL_X * rentMult(V, i); info.line = `目×${per % 10 ? '約' + Math.round(per) : per}万`; }
+      else if (s.k === 'yama') info.line = `入館料 資産の${2 * YAMA_STEP}〜${YAMA_MAX}%`;
       else info.line = (s.k === 'rail' ? '運賃 ' : '家賃 ') + yen(rentFor(V, i, 7)).replace('円', '');
-    } else if (s.k === 'tax') info.line = s.id === 'juumin' ? yen(s.amt).replace('円', '') : '資産の1.4%';
+    }
     if (s.k === 'prop' && V && zoneLvl(V, s.g) > 0) info.zone = zoneLvl(V, s.g);
     else if (s.k === 'go') info.small = '通ると4,000万円';
     else if (s.k === 'jail') info.small = '見物はそのまま';
@@ -2951,7 +3153,8 @@ const B3 = (() => {
     return new Promise(res => {
       const box = document.createElement('div'); box.className = 'b3-jumbo';
       const pool = []; entries.forEach(e => { for (let k = 0; k < e.n; k++) pool.push(e); });
-      box.innerHTML = `<div class="in"><span class="mo">12月</span><b>年末の大抽選</b><p class="odds">${entries.map(e => `<span class="who"><i style="--c:${e.color}">${esc3(e.initial)}</i>${esc3(e.nick)} ${e.n}枚</span>`).join('')}</p><div class="drum"><span class="nm"></span></div><p class="prize">${esc3(amtText)}</p></div>`;
+      const pct = e => Math.round(e.n * 100 / pool.length);
+      box.innerHTML = `<div class="in"><span class="mo">12月</span><b>年末の大抽選</b><p class="odds">${entries.map(e => `<span class="who"><i style="--c:${e.color}">${esc3(e.initial)}</i>${esc3(e.nick)} ${e.n}枚${e.m ? `（最下位${e.m}か月）` : ''}・${pct(e)}%</span>`).join('')}</p><div class="drum"><span class="nm"></span></div><p class="prize">${esc3(amtText)}</p></div>`;
       ov.appendChild(box);
       const nm = box.querySelector('.nm');
       let k = 0, delay = 60; const total = 26 + Math.floor(Math.random() * 6);
@@ -3223,8 +3426,12 @@ function onGameSnap(snap) {
     render(); return;
   }
   const d = snap.data();
-  if (d.v !== 4) return;
-  if (!A.isHost && (!A.S || d.ver >= A.S.ver)) { A.S = JSON.parse(JSON.stringify(d)); onState(); }
+  // a room run by a newer version of the page: this page cannot follow it
+  if (!okVer(d.v)) { if (d.v > MAX_V && !A.isHost) { A.netNote = VER_NOTE.newer; render(); } return; }
+  // a room still run by an earlier version of the page: its host should reload it
+  const note = d.v < MAX_V && !A.isHost ? (d.phase === 'auction' ? VER_NOTE.auction : VER_NOTE.older) : '';
+  if (note) A.netNote = note; else if (Object.values(VER_NOTE).includes(A.netNote)) A.netNote = '';
+  if (!A.isHost && (!A.S || d.ver >= A.S.ver)) { A.S = migrate(JSON.parse(JSON.stringify(d)), true); onState(); }
   if (!A.isHost && !A.autoHostTried && d.hostUid === A.cap.uid) { A.autoHostTried = true; becomeHost(); }
 }
 async function becomeHost() {
@@ -3233,7 +3440,8 @@ async function becomeHost() {
   try {
     const snap = await A.cap.db.doc(COL.games + '/' + A.code).get();
     if (!snap.exists) { clearInterval(A.lockTimer); return false; }
-    A.S = JSON.parse(JSON.stringify(snap.data()));
+    if (!okVer(snap.data().v)) { clearInterval(A.lockTimer); A.netNote = VER_NOTE.newer; render(); return false; }
+    A.S = migrate(JSON.parse(JSON.stringify(snap.data())));
   } catch (e) { clearInterval(A.lockTimer); return false; }
   A.isHost = true; A.S.hostUid = A.cap.uid; A.netNote = '';
   bump(); setPresence();
@@ -3282,9 +3490,18 @@ function refreshSoon() {
   if (A.getTimer) return;
   A.getTimer = setTimeout(async () => {
     A.getTimer = 0;
-    try { const snap = await A.cap.db.doc(COL.games + '/' + A.code).get(); if (snap.exists && !A.isHost) { const d = snap.data(); if (d.v === 4 && (!A.S || d.ver > A.S.ver)) { A.S = JSON.parse(JSON.stringify(d)); onState(); } } } catch (e) { /* the subscription will catch up */ }
+    try { const snap = await A.cap.db.doc(COL.games + '/' + A.code).get(); if (snap.exists && !A.isHost) { const d = snap.data(); if (okVer(d.v) && (!A.S || d.ver > A.S.ver)) { A.S = migrate(JSON.parse(JSON.stringify(d)), true); onState(); } } } catch (e) { /* the subscription will catch up */ }
   }, 350);
 }
+// saved games and rooms from state v4 on (the v10 page and later) are converted by migrate()
+const MAX_V = 12;
+const okVer = v => v >= 4 && v <= MAX_V;
+// notes for a room whose host runs another version of the page
+const VER_NOTE = {
+  older: '進行役の画面が前のバージョンです。進行役の人がページを開き直すと、新しいルールで続けられます',
+  auction: '進行役の画面が前のバージョンで、競りの途中です。この画面からは入札できないので、進行役の人にページを開き直してもらってください（競りは取りやめになります）',
+  newer: 'この部屋は新しいバージョンのページで進んでいます。このページを開き直してください',
+};
 function sanitize(a) {
   if (!a || typeof a !== 'object' || typeof a.t !== 'string') return null;
   const o = { t: a.t.slice(0, 20) };
@@ -3392,10 +3609,10 @@ function startLocal() {
 
 /* ---------------- view model + animation queue ---------------- */
 function viewFrom(S) {
-  return { own: S.own.slice(), lvl: S.lvl.slice(), mort: S.mort.slice(), pos: S.players.map(p => p.pos), out: S.players.map(p => p.out), jail: S.players.map(p => p.jail), money: S.players.map(p => p.money), pot: S.pot, dream: S.dream, zone: (S.zone || []).slice(), mfx: { ...(S.mfx || {}) }, news: (S.news || []).slice(), round: S.round, status: S.status };
+  return { own: S.own.slice(), lvl: S.lvl.slice(), mort: S.mort.slice(), pos: S.players.map(p => p.pos), out: S.players.map(p => p.out), jail: S.players.map(p => p.jail), money: S.players.map(p => p.money), pot: S.pot, dream: S.dream, zone: (S.zone || []).slice(), mfx: { ...(S.mfx || {}) }, news: (S.news || []).slice(), round: S.round, rounds: S.rounds, status: S.status };
 }
 function resetView() { A.q = []; A.evSeen = 0; A.V = null; A.playersKey = ''; A.leader = -1; A.lastP = -1; if (A.hi >= 0) { A.hi = -1; if (A.gl) B3.setHighlightOwner(-1); } }
-function blankView() { return { own: new Array(N_SQ).fill(-1), lvl: new Array(N_SQ).fill(0), mort: new Array(N_SQ).fill(0), pos: [], out: [], jail: [], money: [], pot: 0, dream: DREAM_BASE, zone: new Array(GROUPS.length).fill(0), mfx: {}, news: [], round: 1, status: 'lobby' }; }
+function blankView() { return { own: new Array(N_SQ).fill(-1), lvl: new Array(N_SQ).fill(0), mort: new Array(N_SQ).fill(0), pos: [], out: [], jail: [], money: [], pot: 0, dream: DREAM_BASE, zone: new Array(GROUPS.length).fill(0), mfx: {}, news: [], round: 1, rounds: 20, status: 'lobby' }; }
 function syncPlayers(S) {
   const key = S.players.map(p => p.color + (Array.from(p.nick)[0] || '?') + p.nick).join('|');
   if (key === A.playersKey) return;
@@ -3429,7 +3646,7 @@ async function pump() {
   while (A.q.length) {
     if (document.hidden) { A.q = []; break; } // a hidden tab skips the show and jumps to the current state
     const e = A.q.shift();
-    B3.setSpeed(A.fast ? 6 : A.q.length > 16 ? 3 : A.q.length > 7 ? 1.7 : 1);
+    B3.setSpeed(A.fast ? 6 : e.quick ? 4 : A.q.length > 16 ? 3 : A.q.length > 7 ? 1.7 : 1);
     try { await playEvent(e); } catch (err) { console.error(err); }
   }
   const S = activeState();
@@ -3483,10 +3700,15 @@ async function playEvent(e) {
     case 'own': {
       V.own[e.sq] = e.p; const full = await B3.ownAnim(e.sq); renderPlayers(); if (A.sel === e.sq || V.pos[S.turn] === e.sq) renderDetail();
       if (full >= 0 && S.players[full]) { SND.fx('fanfare'); B3.banner(`${whoHTML(S, full)}が「${esc(GROUPS[BOARD[e.sq].g].n)}」を買い占め！`, 2200, 'win'); B3.fireworks(900); await B3.wait(900); }
-      else if (BOARD[e.sq].k === 'rail' && e.p >= 0 && RAIL_SQ.every(j => V.own[j] === e.p)) { SND.fx('fanfare'); B3.banner(`${whoHTML(S, e.p)}が葛飾交通網を制覇！ 運賃${yen(RAIL_RENT[4])}と毎月の定期代`, 2600, 'win'); B3.fireworks(1200); await B3.wait(1000); }
+      else if (BOARD[e.sq].k === 'rail' && e.p >= 0 && RAIL_SQ.every(j => V.own[j] === e.p)) { SND.fx('fanfare'); B3.banner(`${whoHTML(S, e.p)}が葛飾交通網を制覇！ 運賃${yen(RAIL_RENT[4])}${networkOwner(V) === e.p ? 'と毎月の定期代' : '（定期代は抵当を外してから）'}`, 2600, 'win'); B3.fireworks(1200); await B3.wait(1000); }
       return;
     }
     case 'lvl': V.lvl[e.sq] = e.l; await B3.lvlAnim(e.sq, e.l); renderPlayers(); return;
+    case 'esc': {
+      SND.fx('fanfare'); renderHud(); B3.relabel();
+      B3.banner(`地価の高騰期！ 家賃・運賃・浄水場の料金がさらに${ESC_X}倍（いまは元の×${fmtX(e.x)}）`, 3000, 'warn');
+      await B3.wait(1100); renderDetail(); return;
+    }
     case 'month': {
       V.round = e.round; V.mfx = {}; renderHud(); B3.relabel();
       const E = MONTH_EV[e.m];
@@ -3509,15 +3731,15 @@ async function playEvent(e) {
       await B3.showCard('news', 'かつしか号外', N.t + (e.g !== undefined ? `（${GROUPS[e.g].n}）` : ''), '', 3200);
       B3.relabel(); renderDetail(); return;
     }
-    case 'typhoon': SND.fx('thunder'); B3.banner(`台風で<b>${esc(e.river)}</b>があふれた！ ${e.groups.map(g => esc(GROUPS[g].n)).join('・')}の建物がこわれる`, 2600, 'warn'); B3.rain(2600); await B3.wait(900); return;
+    case 'typhoon': SND.fx('thunder'); B3.banner(`台風で<b>${esc(e.river)}</b>があふれた！ ${e.groups.map(g => `「${esc(GROUPS[g].n)}」`).join('')}の建物がこわれる`, 2600, 'warn'); B3.rain(2600); await B3.wait(900); return;
     case 'zone': {
       if (e.g < 0) { SND.fx('skip'); B3.banner(`${whoHTML(S, e.p)}は再開発を見送った`, 1700); await B3.wait(600); return; }
       V.zone = V.zone && V.zone.length ? V.zone : new Array(GROUPS.length).fill(0); V.zone[e.g] = e.lvl;
-      B3.banner(`${e.p >= 0 ? whoHTML(S, e.p) + 'が' : ''}「${esc(GROUPS[e.g].n)}」を再開発${'★'.repeat(e.lvl)}に！ 家賃${1.5 + 0.5 * e.lvl}倍・土地${1 + 0.5 * e.lvl}倍・建物${1 + e.lvl}倍`, 2800, 'win');
+      B3.banner(`${e.p >= 0 ? whoHTML(S, e.p) + 'が' : ''}「${esc(GROUPS[e.g].n)}」を再開発${'★'.repeat(e.lvl)}に！ 家賃×${zoneRentMult(e.lvl)}・時価×${zoneValMult(e.lvl)}`, 2800, 'win');
       await B3.zoneAnim(e.g); renderPlayers(); renderDetail(); return;
     }
     case 'jumbo': {
-      const entries = e.tickets.map(x => ({ p: x.p, n: x.n, nick: S.players[x.p].nick, color: S.players[x.p].color, initial: Array.from(S.players[x.p].nick)[0] || '?' }));
+      const entries = e.tickets.map(x => ({ p: x.p, n: x.n, m: x.m || 0, nick: S.players[x.p].nick, color: S.players[x.p].color, initial: Array.from(S.players[x.p].nick)[0] || '?' }));
       await B3.jumbo(entries, e.winner, `賞金 ${yen(e.amt)}`);
       return;
     }
@@ -3547,10 +3769,10 @@ function soundState() {
 function isMine(S, p) { const P = S.players[p]; if (!P || P.cpu) return false; return A.mode === 'local' ? true : P.uid === A.cap.uid; }
 function renderTabs() { for (const m of ['online', 'local']) $('tab-' + m).setAttribute('aria-pressed', String(A.mode === m)); }
 function roundText(S) { return S.rounds ? `${Math.min(S.round, S.rounds)} / ${S.rounds}周` : `${S.round}周目`; }
-function monthLine(round) {
+function monthLine(round, rounds) {
   const m = monthIndex(round), E = MONTH_EV[m], nx = MONTH_EV[(m + 1) % 12];
-  const now = round === 1 ? '対局開始' : E.n;
-  return `<b>${MONTHS[m]}</b><span class="ev">${esc(now)}</span><span class="nx">来月 ${esc(nx.n)}</span>`;
+  const now = round === 1 ? '対局開始' : E.n, x = escMult({ round, rounds });
+  return `<b>${MONTHS[m]}</b><span class="ev">${esc(now)}</span>${x > 1 ? `<span class="esc">高騰期 家賃・運賃×${fmtX(x)}</span>` : ''}<span class="nx">来月 ${esc(nx.n)}</span>`;
 }
 function renderHud(p) {
   if (!A.gl) return;
@@ -3561,7 +3783,7 @@ function renderHud(p) {
   const rt = S.rounds ? `${Math.min(round, S.rounds)} / ${S.rounds}周` : `${round}周目`;
   if (S.status === 'over' && !busy()) B3.setTurn(`<b>対局終了</b><em>${rt}</em>`);
   else B3.setTurn(`<span class="pw" style="--c:${P.color}">${esc(Array.from(P.nick)[0] || '?')}</span><b>${esc(P.nick)}</b>の番<em>${rt}</em>`);
-  B3.setMonth(monthLine(round));
+  B3.setMonth(monthLine(round, S.rounds));
   B3.setDream(`かつしかドリーム <b>${yen(A.V ? A.V.dream : S.dream)}</b>`);
   B3.setPot(`募金箱 <b>${yen(A.V ? A.V.pot : S.pot)}</b>`);
 }
@@ -3610,7 +3832,7 @@ function localSetupHTML() {
   });
   h += `</ul><div class="row">${A.seats.length < MAX_SEATS ? `<button class="btn quiet small" type="button" data-act="seatAdd">＋ 人をふやす</button>` : ''}<label class="inline" for="localRounds">終わり方 ${roundSelect('localRounds', A.localRounds)}</label></div>`;
   const saved = store.get('localGame', null);
-  h += `<div class="row"><button class="btn" type="button" data-act="startLocal">対局をはじめる</button>${saved && saved.v === 4 && saved.status === 'playing' ? `<button class="btn sub" type="button" data-act="resumeLocal">前の対局の続き</button>` : ''}</div>`;
+  h += `<div class="row"><button class="btn" type="button" data-act="startLocal">対局をはじめる</button>${saved && okVer(saved.v) && saved.status === 'playing' ? `<button class="btn sub" type="button" data-act="resumeLocal">前の対局の続き</button>` : ''}</div>`;
   return h;
 }
 function hostName(S) { const p = S.players.find(x => x.uid === S.hostUid); return p ? p.nick : '部屋の主'; }
@@ -3642,7 +3864,7 @@ function turnHTML(S) {
   if (busy()) h += `<p class="waiting">盤の上で動いています…</p>`;
   if (me >= 0 && S.players[me].cpu && !S.players[me].out) h += `<p class="waiting">いまはCPUが代わりに打っています。進行役が「本人に戻す」を押すと操作できます。</p>`;
   else if (S.offer) h += offerHTML(S, me);
-  else if (S.phase === 'zone' && S.zonePick) h += S.zonePick.p === me && !wait ? zoneHTML(S, me) : `<p class="waiting">${esc(S.players[S.zonePick.p].nick)}が再開発地区にする色を選んでいます…</p>`;
+  else if (S.phase === 'zone' && S.zonePick) h += S.zonePick.p === me && !wait ? zoneHTML(S, me) : `<p class="waiting">${esc(S.players[S.zonePick.p].nick)}が再開発する色を選んでいます…</p>`;
   else if (S.phase === 'debt' && S.debts.length) h += S.debts[0].p === me && !wait ? debtHTML(S, me) : `<p class="waiting">${esc(S.players[S.debts[0].p].nick)}が支払いのお金を用意しています（${yen(S.debts[0].amt)}）…</p>`;
   else if (d === me && me >= 0 && !wait) h += myTurnHTML(S, me);
   else if (wait) h += `<p class="waiting">送信しました。進行役の画面が受け取るのを待っています…</p>`;
@@ -3669,23 +3891,28 @@ function myTurnHTML(S, me) {
     const { sq, price, from, mort, pass } = S.buy, s = BOARD[sq], what = s.k === 'rail' ? '路線' : s.k === 'prop' ? '土地' : '施設';
     h += deedHead(sq, S);
     let msg;
-    if (from === undefined) msg = s.k === 'util' || s.k === 'yama' ? `だれも持っていない特別な施設です。<b>${yen(price)}</b>で買えます。手持ちは${yen(P.money)}。` : `空き${s.k === 'rail' ? 'の路線' : '地'}です。<b>${yen(price)}</b>で買えます。手持ちは${yen(P.money)}。`;
-    else if (mort) msg = `${esc(S.players[from].nick)}の${what}ですが、抵当に入っています。<b>${yen(price)}</b>で買い取れます（そのうち${yen(unmortCost(sq))}は銀行への返済、残りの${yen(price - unmortCost(sq))}が持ち主へ）。手持ちは${yen(P.money)}。`;
-    else if (pass) msg = `資産が最下位なので、下町パスで運賃はタダ。この路線を元の値段の<b>${yen(price)}</b>で買い取れます（交通網を制覇されていても）。手持ちは${yen(P.money)}。`;
-    else msg = `${esc(S.players[from].nick)}の${what}です。${s.k === 'rail' ? '運賃' : '家賃'}を払いました。いまなら倍の<b>${yen(price)}</b>で買い取れます。手持ちは${yen(P.money)}。`;
+    if (from === undefined) msg = (s.k === 'util' || s.k === 'yama' ? `だれも持っていない特別な施設です。` : `空き${s.k === 'rail' ? 'の路線' : '地'}です。`) + `<b>${yen(price)}</b>で買えます。手持ちは${yen(P.money)}。`;
+    else if (mort) msg = `${pass ? `資産が最下位なので、下町パスで運賃はタダ。${esc(S.players[from].nick)}のこの路線は抵当に入っていて、時価の` : `${esc(S.players[from].nick)}の${what}ですが、抵当に入っています。時価の2倍の`}<b>${yen(price)}</b>で買い取れます（そのうち${yen(unmortCost(S, sq))}は銀行への抵当の返済、残りの${yen(price - unmortCost(S, sq))}が持ち主へ）。手持ちは${yen(P.money)}。`;
+    else if (pass) msg = `資産が最下位なので、下町パスで運賃はタダ。この路線を時価の<b>${yen(price)}</b>で買い取れます（交通網を制覇されていても）。手持ちは${yen(P.money)}。`;
+    else msg = `${esc(S.players[from].nick)}の${what}です。${s.k === 'rail' ? '運賃' : '家賃'}を払いました。いまなら時価の2倍の<b>${yen(price)}</b>で買い取れます。手持ちは${yen(P.money)}。`;
     h += `<p>${msg}</p>`;
     h += `<div class="row"><button class="btn" type="button" data-act="do" data-t="buy" ${P.money < price ? 'disabled' : ''}>${from !== undefined ? '買い取る' : '買う'}（${yen(price)}）</button><button class="btn quiet" type="button" data-act="do" data-t="pass">見送る</button></div>`;
     if (P.money < price) h += `<p class="hint">お金が足りません。下の「土地と建物」で抵当に入れたり売ったりすると、お金を作れます。</p>`;
     h += toolsHTML();
   } else if (S.phase === 'act') {
-    h += `<div class="row"><button class="btn big" type="button" data-act="do" data-t="${S.again && !P.jail ? 'roll' : 'end'}">${S.again && !P.jail ? 'ゾロ目！もう一度ふる' : '番を終える'}</button></div>${toolsHTML()}`;
+    h += `<div class="row"><button class="btn big" type="button" data-act="do" data-t="${S.again && !P.jail ? 'roll' : 'end'}">${S.again && !P.jail ? (S.dice && S.dice[0] === S.dice[1] ? 'ゾロ目！もう一度ふる' : 'もう一度ふる') : '番を終える'}</button></div>${toolsHTML()}`;
   }
   return h;
+}
+// what each ★ does, in one table (the same numbers as the rules)
+function zoneTableHTML() {
+  const row = z => `<tr><th>★${z}</th><td>×${zoneRentMult(z)}</td><td>×${zoneValMult(z)}</td></tr>`;
+  return `<table class="ztab"><tr><th></th><td>家賃</td><td>時価（土地・家・マンション）</td></tr>${[1, 2, 3].map(row).join('')}</table><p class="hint">時価は、土地にも家・マンションにも同じ倍率でかかります。銀行で買う値段・建てる値段・銀行に売る値段（家・マンションはその半額）・資産のどれも時価からです。もう建っている家とマンションも値上がりします。</p>`;
 }
 function zoneHTML(S, me) {
   const from = S.zonePick && S.zonePick.from;
   const eyebrow = from === 'card' ? 'カード・再開発' : from === 'news' ? '号外・区の新しい計画' : '再開発の告示';
-  let h = `<div class="phead"><span class="eyebrow">${eyebrow}</span><h2>再開発する色を選んでください</h2></div><p class="hint">${from === 'card' ? '' : '資産が最下位なので、あなたが選びます。'}選んだ色は再開発の★が1つ増えます（最大★${MAX_ZONE}）。家賃は★1で2倍、★2で2.5倍、★3で3倍。土地の値打ちは★1つごとに＋0.5倍、家とマンションの値打ちは＋1倍。だれの土地でも上がるので、見送ってもかまいません。</p><ul class="zones">`;
+  let h = `<div class="phead"><span class="eyebrow">${eyebrow}</span><h2>再開発する色を選んでください</h2></div><p class="hint">${from === 'card' ? '' : '資産が最下位なので、あなたが選びます。'}選んだ色の再開発の★が1つ増えます（最大★${MAX_ZONE}）。だれの土地でも上がるので、見送ってもかまいません。</p>${zoneTableHTML()}<ul class="zones">`;
   GROUPS.forEach((G, g) => {
     const owners = {}; GROUP_SQ[g].forEach(i => { if (S.own[i] >= 0) owners[S.own[i]] = (owners[S.own[i]] || 0) + 1; });
     const desc = Object.keys(owners).map(o => `${whoHTML(S, +o)} ${owners[o]}/${GROUP_SQ[g].length}`).join('') || '<span>まだだれも持っていない</span>';
@@ -3705,26 +3932,26 @@ function debtHTML(S, me) {
   const d = S.debts[0], P = S.players[me];
   const short = Math.max(0, d.amt - P.money), canRaise = maxRaise(S, me);
   let h = `<div class="debt"><h3>${esc(P.nick)}のお金が足りません</h3><dl><dt>支払い先</dt><dd>${d.to === BANK ? '銀行' : d.to === POT ? '河川敷の募金箱' : esc(S.players[d.to].nick)}</dd><dt>内容</dt><dd>${esc(d.why || '支払い')}</dd><dt>支払う額</dt><dd>${yen(d.amt)}</dd><dt>手持ち</dt><dd>${yen(P.money)}</dd><dt>足りない分</dt><dd class="short">${short ? yen(short) : 'そろいました'}</dd></dl>`;
-  if (short > 0) h += `<p class="hint">${canRaise >= short ? `下の土地や家を売る・抵当に入れる・交渉で売る、のどれでお金を作るかを選んでください。全部売れば最大 ${yen(canRaise)} 作れます。` : `全部売っても最大 ${yen(canRaise)} しか作れません。交渉で売れなければ、破産するしかありません。`}</p>`;
-  h += `<div class="row"><button class="btn" type="button" data-act="do" data-t="payDebt" ${short ? 'disabled' : ''}>${yen(d.amt)}を支払う</button><button class="btn quiet small" type="button" data-act="panel" data-v="trade" aria-pressed="${A.panel === 'trade'}">交渉で売る</button></div>`;
+  if (short > 0) h += `<p class="hint">${canRaise >= short ? `あなたの資産は${yen(P.money + canRaise)}なので、払えます。銀行は、土地は時価で、家・マンションは時価の半額で買い取ります。「おまかせで売って払う」を押すと、家賃の少ないものから順に抵当や売却をして、自動で払います。自分で選んで売ることもできます。` : `資産は${yen(P.money + canRaise)}で、全部売っても足りません。交渉で売れなければ、破産するしかありません。`}</p>`;
+  h += `<div class="row">${short && canRaise >= short ? `<button class="btn" type="button" data-act="do" data-t="autoPay">おまかせで売って払う</button>` : ''}<button class="btn${short ? ' sub' : ''}" type="button" data-act="do" data-t="payDebt" ${short ? 'disabled' : ''}>${yen(d.amt)}を支払う</button><button class="btn quiet small" type="button" data-act="panel" data-v="trade" aria-pressed="${A.panel === 'trade'}">交渉で売る</button></div>`;
   h += assetsHTML(S, me, 'debt');
   h += A.confirmOut
-    ? `<div class="warn"><b>本当に破産しますか？</b>残りのお金と土地は${d.to >= 0 ? esc(S.players[d.to].nick) + 'に' : '銀行に'}渡り、あなたは対局から外れます。<div class="row"><button class="btn danger small" type="button" data-act="do" data-t="bankrupt">破産する</button><button class="btn quiet small" type="button" data-act="noOut">やめる</button></div></div>`
+    ? `<div class="warn"><b>本当に破産しますか？</b>建物は銀行が買い取り、${d.to >= 0 ? `お金と土地は${esc(S.players[d.to].nick)}に渡り` : d.to === POT ? 'お金は募金箱へ、土地は銀行に戻り' : 'お金と土地は銀行に渡り'}、あなたは対局から外れます。<div class="row"><button class="btn danger small" type="button" data-act="do" data-t="bankrupt">破産する</button><button class="btn quiet small" type="button" data-act="noOut">やめる</button></div></div>`
     : `<div class="row"><button class="btn quiet small" type="button" data-act="askOut">破産を宣言する…</button></div>`;
   return h + '</div>';
 }
 function assetsHTML(S, me, mode) {
   const mine = ownedBy(S, me);
   if (!mine.length) return `<p class="empty">土地を持っていません。</p>`;
-  let h = mode === 'manage' ? `<p class="hint">同じ色をすべて持つと家を建てられます（色ごとに均等に。家4軒の次はマンション）。建物は建築費の半額、土地は値打ちの7割で銀行に売れます。抵当は値段の半額を借りて、外すときは55%を返します。抵当中の土地は、ほかの人に買い取られることがあります。</p>` : '';
+  let h = mode === 'manage' ? `<p class="hint">同じ色をすべて持つと家を建てられます（色ごとに均等に。家4軒の次はマンション）。銀行は、土地は時価で、家・マンションは時価（いま建てる値段）の半額で買い取ります。抵当は土地の時価の半分を借りて、外すときは借りた額の1.1倍を返します。抵当中の土地は、ほかの人に時価の2倍で買い取られることがあります。</p>` : '';
   h += `<ul class="manage">`;
   for (const i of mine) {
     const s = BOARD[i], l = S.lvl[i], g = s.k === 'prop' ? GROUPS[s.g] : null, m = S.mort[i];
     const ops = [];
-    if (g && mode === 'manage' && groupComplete(S, s.g, me) && l < 5) ops.push(`<button class="btn small" type="button" data-act="do" data-t="build" data-sq="${i}" ${canBuild(S, me, i) ? '' : 'disabled'}>＋${l === 4 ? 'マンション' : '家'}（${yen(buildCost(i, l + 1))}）</button>`);
-    if (g && l > 0) ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="sellHouse" data-sq="${i}" ${canSellHouse(S, me, i) ? '' : 'disabled'}>${l === 5 ? 'マンション' : '家'}を売る ＋${yen(sellBldValue(i, l))}</button>`);
-    if (!m) ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="mortgage" data-sq="${i}" ${canMortgage(S, me, i) ? '' : 'disabled'}>抵当 ＋${yen(mortValue(i))}</button>`);
-    else if (mode === 'manage') ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="unmortgage" data-sq="${i}" ${canUnmortgage(S, me, i) ? '' : 'disabled'}>抵当を外す −${yen(unmortCost(i))}</button>`);
+    if (g && mode === 'manage' && groupComplete(S, s.g, me) && l < 5) ops.push(`<button class="btn small" type="button" data-act="do" data-t="build" data-sq="${i}" ${canBuild(S, me, i) ? '' : 'disabled'}>＋${l === 4 ? 'マンション' : '家'}（${yen(buildCost(S, i, l + 1))}）</button>`);
+    if (g && l > 0) ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="sellHouse" data-sq="${i}" ${canSellHouse(S, me, i) ? '' : 'disabled'}>${l === 5 ? 'マンション' : '家'}を売る ＋${yen(sellBldValue(S, i, l))}</button>`);
+    if (!m) ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="mortgage" data-sq="${i}" ${canMortgage(S, me, i) ? '' : 'disabled'}>抵当 ＋${yen(mortValue(S, i))}</button>`);
+    else if (mode === 'manage') ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="unmortgage" data-sq="${i}" ${canUnmortgage(S, me, i) ? '' : 'disabled'}>抵当を外す −${yen(unmortCost(S, i))}</button>`);
     ops.push(`<button class="btn quiet small" type="button" data-act="do" data-t="sellLand" data-sq="${i}" ${canSellLand(S, me, i) ? '' : 'disabled'}>銀行に売る ＋${yen(Math.max(0, sellValue(S, i)))}</button>`);
     h += `<li><i style="--g:${g ? g.c : s.line || '#5a6b78'}"></i><div class="mh"><b>${esc(sqName(S, i))}</b><span class="lvl">${s.k === 'prop' ? LVL_NAME[l] + (zoneLvl(S, s.g) ? '・再開発' + '★'.repeat(zoneLvl(S, s.g)) : '') : s.k === 'rail' ? '路線' : '特別な施設'}${m ? '・抵当中' : ''}</span></div><div class="ops">${ops.join('')}</div></li>`;
   }
@@ -3748,21 +3975,169 @@ function tradeHTML(S, me) {
     <label class="field" for="trTo"><span>相手</span><select id="trTo">${others.map(i => `<option value="${i}" ${i === T2.to ? 'selected' : ''}>${esc(S.players[i].nick)}</option>`).join('')}</select></label>
     <div class="cols"><div><span>あなたが渡す</span>${list(me, T2.give, 'give')}<label class="money" for="trGm">お金 <input id="trGm" type="number" min="0" max="${S.players[me].money}" step="100" value="${T2.gm}">万円</label></div>
     <div><span>${esc(S.players[T2.to].nick)}が渡す</span>${list(T2.to, T2.get, 'get')}<label class="money" for="trTm">お金 <input id="trTm" type="number" min="0" max="${S.players[T2.to].money}" step="100" value="${T2.tm}">万円</label></div></div>
-    <p class="hint">家が建っている色の土地は出せません。抵当中の土地は抵当のまま渡ります。相手が受けると、すぐに入れ替わります。</p>
+    <p class="hint">家が建っている色の土地は出せません。抵当中の土地は抵当のまま渡ります。相手が受けると、すぐに入れかわります。</p>
     <div class="row"><button class="btn" type="button" data-act="sendOffer">申し込む</button></div></div>`;
 }
 function resultHTML(S) {
   const res = S.result || [];
   let h = `<div class="phead"><span class="eyebrow">対局終了</span><h2>長者番付の1位は ${playerChip(S, res[0] ? res[0].p : 0)}</h2></div><ol class="ranking">`;
   res.forEach((r, k) => { const P = S.players[r.p]; h += `<li><span class="rk">${k + 1}</span>${playerChip(S, r.p)}<span class="w">${P.out ? '破産' : '資産 ' + yen(r.worth)}</span></li>`; });
-  h += `</ol><p class="hint">資産は、手持ちのお金・土地の値打ち・建物の値打ちの合計です（抵当の分は差し引き。再開発の★で値打ちが上がります）。</p><div class="row">`;
+  h += `</ol>`;
+  const W = Math.max(260, Math.floor(($('action').clientWidth || 380) - 34));
+  const c = chartHTML('final', S, null, W, 200, true);
+  if (c) h += `<div class="wresult"><div class="wh"><b>資産の推移</b><span class="hint">首位交代 ${c.changes}回</span></div>${c.html}</div>`;
+  h += `<p class="hint">資産は、手持ちのお金＋土地の時価＋家・マンションを売ったときの額（時価の半額）から、抵当の借金（返すときの額）を引いたものです。全部を銀行に売ったときに残るお金と同じです。</p><div class="row">`;
   if (A.mode === 'local') h += `<button class="btn" type="button" data-act="startLocal">同じ顔ぶれでもう一局</button><button class="btn quiet" type="button" data-act="setup">顔ぶれを変える</button>`;
   else if (A.isHost) h += `<button class="btn" type="button" data-act="rematch">同じ顔ぶれでもう一局</button><button class="btn quiet" type="button" data-act="close">部屋を閉じる</button>`;
   else h += `<button class="btn quiet" type="button" data-act="exit">部屋の一覧へ</button>`;
   return h + `</div>`;
 }
+
+/* ---------------- 資産の推移 (a line per player) ---------------- */
+// the players' colours as 2px lines; the gold and the orange are taken darker so they hold on the paper
+// (checked for lightness, colour-blind separation and contrast in light and dark)
+const LINE_C = { '#f0a500': '#b97d00', '#ff7a1a': '#dd5a0a' };
+const lineColor = c => LINE_C[c] || c;
+const CHARTS = new Map();
+function okuLabel(v) {
+  if (v >= 10000) { const o = v / 10000; return (Number.isInteger(o) ? o : +o.toFixed(1)) + '億'; }
+  return v ? v.toLocaleString('ja-JP') + '万' : '0';
+}
+// the top of the axis: the next clean value (2億, 3億, 4億, 6億, 8億, 10億, ...), so that half of it is clean too
+function niceTop(v) {
+  if (v <= 0) return 10000;
+  const e = Math.pow(10, Math.floor(Math.log10(v))), f = v / e;
+  return [1, 1.2, 1.6, 2, 3, 4, 5, 6, 8, 10].find(n => n >= f - 1e-9) * e;
+}
+// the points to draw: the start of every lap so far, then where everyone stands now (or the end of the game)
+function worthPoints(S, V) {
+  const live = (S.status === 'playing' || (S.status === 'over' && busy())) && V && V.money && V.money.length === S.players.length;
+  const r = live && V.round ? V.round : S.round;
+  const pts = (S.hist || []).filter(h => !live || (h.r <= r && !h.end)).map(h => ({ r: h.r, w: h.w, end: !!h.end }));
+  if (live) {
+    const lastW = pts.length ? pts[pts.length - 1].w : [];
+    pts.push({ r: r + 0.5, w: S.players.map((P, p) => (V.out[p] ? (lastW[p] === null || lastW[p] === 0 || lastW[p] === undefined ? null : 0) : netWorthView(S, V, p))), now: true });
+  }
+  return pts;
+}
+// the one player strictly ahead, or -1 when the top is shared
+function leaderOf(w) {
+  let b = -1, tie = false;
+  w.forEach((v, p) => { if (v === null || v === undefined) return; if (b < 0 || v > w[b]) { b = p; tie = false; } else if (v === w[b]) tie = true; });
+  return tie ? -1 : b;
+}
+function chartHTML(id, S, V, W, H, big) {
+  const pts = worthPoints(S, V);
+  if (pts.length < 2) return '';
+  const n = S.players.length, L = 40, R = big ? 14 : 10, T = 10, B = 20, pw = W - L - R, ph = H - T - B;
+  const r0 = pts[0].r, r1 = pts[pts.length - 1].r, span = r1 > r0 ? r1 - r0 : 1;
+  const X = r => L + (r - r0) / span * pw;
+  let top = 0; pts.forEach(pt => pt.w.forEach(v => { if (v > top) top = v; }));
+  top = niceTop(top * 1.04);
+  const Y = v => T + ph - v / top * ph;
+  const lapText = pt => (pt.now ? 'いま' : pt.end ? '終了' : `${pt.r}周目・${MONTHS[monthIndex(pt.r)]}`);
+  let g = '';
+  // the grid: a hairline at 0, half and the top
+  [0, top / 2, top].forEach(v => { g += `<line class="grid" x1="${L}" x2="${W - R}" y1="${Y(v).toFixed(1)}" y2="${Y(v).toFixed(1)}"/><text class="ax" x="${L - 6}" y="${(Y(v) + 3.5).toFixed(1)}" text-anchor="end">${okuLabel(v)}</text>`; });
+  // the laps along the bottom
+  const every = [1, 2, 3, 6, 12, 24].find(k => span / k <= (big ? 8 : 4)) || 24;
+  const ticks = [];
+  pts.forEach((pt, k) => { if (k === 0 || k === pts.length - 1 || (!pt.now && !pt.end && (pt.r - r0) % every === 0)) ticks.push(pt); });
+  let lastX = -99;
+  ticks.forEach((pt, k) => {
+    const x = X(pt.r), last = k === ticks.length - 1, label = pt.now ? 'いま' : pt.end ? '終了' : `${pt.r}周`;
+    if (!last && x - lastX < 34) return; if (last && x - lastX < 30 && lastX > 0) g = g.replace(/<text class="ax tick"[^>]*>[^<]*<\/text>$/, '');
+    g += `<text class="ax tick" x="${x.toFixed(1)}" y="${H - 5}" text-anchor="${k === 0 ? 'start' : last ? 'end' : 'middle'}">${label}</text>`; lastX = x;
+  });
+  // lines, one per player, stopping where a player went bankrupt
+  const rows = [];
+  S.players.forEach((P, p) => {
+    const c = lineColor(P.color); let d = '', on = false, lastPt = null;
+    pts.forEach(pt => { const v = pt.w[p]; if (v === null || v === undefined) { on = false; return; } d += `${on ? 'L' : 'M'}${X(pt.r).toFixed(1)} ${Y(v).toFixed(1)}`; on = true; lastPt = { x: X(pt.r), y: Y(v), v }; });
+    g += `<path class="ln" d="${d}" style="stroke:${c}"/>`;
+    rows.push({ p, nick: P.nick, color: c, vals: pts.map(pt => pt.w[p]), end: lastPt });
+  });
+  // where the lead changed hands, a dot on the new leader's line
+  let prev = leaderOf(pts[0].w), changes = 0;
+  const rings = [];
+  pts.forEach((pt, k) => {
+    const ld = leaderOf(pt.w); if (k && ld >= 0 && prev >= 0 && ld !== prev) { changes++; rings.push(`<circle class="ring" cx="${X(pt.r).toFixed(1)}" cy="${Y(pt.w[ld]).toFixed(1)}" r="5" style="stroke:${lineColor(S.players[ld].color)}"/>`); }
+    if (ld >= 0) prev = ld;
+  });
+  // the end of each line gets its dot; on the big chart the values are written there when they do not collide
+  const ends = rows.filter(rw => rw.end && rw.end.v > 0);
+  ends.forEach(rw => { g += `<circle class="dot" cx="${rw.end.x.toFixed(1)}" cy="${rw.end.y.toFixed(1)}" r="4" style="fill:${rw.color}"/>`; });
+  g += rings.join('');
+  if (big && ends.length <= 4) {
+    const ys = ends.map(rw => rw.end.y).sort((a, b) => a - b);
+    if (ys.every((y, k) => !k || y - ys[k - 1] >= 16)) ends.forEach(rw => { g += `<text class="ax endv" x="${(rw.end.x - 8).toFixed(1)}" y="${(rw.end.y - 7).toFixed(1)}" text-anchor="end">${okuLabel(rw.end.v)}</text>`; });
+  }
+  g += `<line class="xh" x1="0" x2="0" y1="${T}" y2="${T + ph}" visibility="hidden"/><rect class="hit" x="${L}" y="0" width="${pw}" height="${H}" fill="transparent"/>`;
+  CHARTS.set(id, { xs: pts.map(pt => X(pt.r)), labels: pts.map(lapText), rows, T, ph });
+  const legend = `<div class="wlegend">${rows.map(rw => `<span><i style="--c:${rw.color}"></i>${esc(rw.nick)}</span>`).join('')}</div>`;
+  const table = `<details class="wtable"><summary>表で見る</summary><div class="tw"><table><tr><th></th>${rows.map(rw => `<th>${esc(rw.nick)}</th>`).join('')}</tr>${pts.map((pt, k) => `<tr><th>${lapText(pt)}</th>${rows.map(rw => `<td>${rw.vals[k] === null || rw.vals[k] === undefined ? '－' : yen(rw.vals[k])}</td>`).join('')}</tr>`).join('')}</table></div></details>`;
+  return { html: `<div class="wchart" data-chart="${id}"><svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" tabindex="0" aria-label="資産の推移のグラフ（${esc(rows.map(rw => rw.nick).join('、'))}）">${g}</svg><div class="tip" hidden></div></div>${legend}${table}`, changes };
+}
+// hover, touch and the arrow keys move a crosshair; the tooltip lists everyone at that lap
+function chartPoint(wrap, k) {
+  const C = CHARTS.get(wrap.dataset.chart); if (!C) return;
+  k = Math.max(0, Math.min(C.xs.length - 1, k)); wrap._k = k;
+  const svg = wrap.querySelector('svg'), xh = svg.querySelector('.xh'), tip = wrap.querySelector('.tip');
+  xh.setAttribute('x1', C.xs[k]); xh.setAttribute('x2', C.xs[k]); xh.setAttribute('visibility', 'visible');
+  tip.textContent = '';
+  const hd = document.createElement('div'); hd.className = 'h'; hd.textContent = C.labels[k]; tip.appendChild(hd);
+  C.rows.slice().sort((a, b) => (b.vals[k] ?? -1) - (a.vals[k] ?? -1)).forEach(rw => {
+    const row = document.createElement('div'); row.className = 'r';
+    const key = document.createElement('i'); key.style.setProperty('--c', rw.color);
+    const val = document.createElement('b'); const v = rw.vals[k]; val.textContent = v === null || v === undefined ? '破産' : yen(v);
+    const nm = document.createElement('span'); nm.textContent = rw.nick;
+    row.append(key, val, nm); tip.appendChild(row);
+  });
+  tip.hidden = false;
+  const w = wrap.clientWidth, tw = tip.offsetWidth, x = C.xs[k] * (svg.clientWidth / +svg.getAttribute('width') || 1);
+  tip.style.left = Math.max(0, Math.min(w - tw, x + 12 + tw > w ? x - tw - 12 : x + 12)) + 'px';
+}
+function chartHide(wrap) { const xh = wrap.querySelector('.xh'), tip = wrap.querySelector('.tip'); if (xh) xh.setAttribute('visibility', 'hidden'); if (tip) tip.hidden = true; }
+function chartAt(wrap, clientX) {
+  const C = CHARTS.get(wrap.dataset.chart); if (!C) return;
+  const svg = wrap.querySelector('svg'), b = svg.getBoundingClientRect(), x = (clientX - b.left) * (+svg.getAttribute('width') / b.width);
+  let k = 0; C.xs.forEach((cx, j) => { if (Math.abs(cx - x) < Math.abs(C.xs[k] - x)) k = j; });
+  chartPoint(wrap, k);
+}
+document.addEventListener('pointermove', e => { const w = e.target.closest && e.target.closest('.wchart'); if (w) chartAt(w, e.clientX); });
+document.addEventListener('pointerdown', e => { const w = e.target.closest && e.target.closest('.wchart'); if (w) chartAt(w, e.clientX); });
+// a finger leaves the screen after every tap: keep the values up until the chart loses focus
+document.addEventListener('pointerout', e => { if (e.pointerType === 'touch') return; const w = e.target.closest && e.target.closest('.wchart'); if (w && !(e.relatedTarget && w.contains(e.relatedTarget)) && document.activeElement !== w.querySelector('svg')) chartHide(w); });
+document.addEventListener('focusin', e => { const w = e.target.closest && e.target.closest('.wchart'); if (w && e.target.matches(':focus-visible') && w._k === undefined) { const C = CHARTS.get(w.dataset.chart); if (C) chartPoint(w, C.xs.length - 1); } });
+document.addEventListener('focusout', e => { const w = e.target.closest && e.target.closest('.wchart'); if (w) chartHide(w); });
+document.addEventListener('keydown', e => {
+  const w = document.activeElement && document.activeElement.closest && document.activeElement.closest('.wchart'); if (!w) return;
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); chartPoint(w, (w._k ?? 0) + (e.key === 'ArrowLeft' ? -1 : 1)); }
+});
+// the small chart under the players
+function renderWorth() {
+  const box = $('worthBox'), S = activeState();
+  if (!box) return;
+  if (!S || S.status === 'lobby' || !(S.hist && S.hist.length)) { if (box._key !== 'none') { box._key = 'none'; box.innerHTML = ''; box.hidden = true; } return; }
+  const V = A.V && A.V.money && A.V.money.length === S.players.length ? A.V : viewFrom(S);
+  if (box.hidden) box.hidden = false;
+  if (!box._w) box._w = Math.max(220, Math.floor(box.clientWidth || box.parentElement.clientWidth - 32 || 300));
+  const W = box._w, pts = worthPoints(S, V), key = W + '|' + JSON.stringify(pts) + '|' + S.players.map(P => P.color + P.nick).join();
+  if (box._key === key) return;
+  box._key = key;
+  const oldWrap = box.querySelector('.wchart'), tbl = box.querySelector('.wtable');
+  const keep = { open: !!(tbl && tbl.open), focus: !!(oldWrap && oldWrap.contains(document.activeElement)), k: oldWrap && oldWrap.querySelector('.tip') && !oldWrap.querySelector('.tip').hidden ? oldWrap._k : undefined };
+  const c = chartHTML('mini', S, V, W, 112, false);
+  box.innerHTML = c ? `<div class="wh"><b>資産の推移</b><span class="hint">${c.changes ? `首位交代 ${c.changes}回` : ''}</span></div>${c.html}` : '';
+  const wrap = box.querySelector('.wchart'); if (!wrap) return;
+  if (keep.open) box.querySelector('.wtable').open = true;
+  if (keep.focus) wrap.querySelector('svg').focus({ preventScroll: true });
+  if (keep.k !== undefined) { const C = CHARTS.get('mini'); chartPoint(wrap, Math.min(keep.k, C.xs.length - 1)); }
+}
+window.addEventListener('resize', () => { const b = $('worthBox'); if (b) { b._key = ''; b._w = 0; } renderWorth(); if (activeState() && activeState().status === 'over') { $('action')._html = ''; renderAction(); } });
 const shownMoney = {};
 function renderPlayers() {
+  renderWorth();
   const el = $('players'), S = activeState();
   if (!S || !S.players.length) { el.innerHTML = `<p class="empty">まだだれもいません。</p>`; $('playersNote').textContent = ''; return; }
   const online = A.mode === 'online', V = A.V && A.V.money.length === S.players.length ? A.V : viewFrom(S);
@@ -3773,6 +4148,7 @@ function renderPlayers() {
     if (P.cpu) chips.push('<span class="chip">CPU</span>');
     if (V.jail[p] && !V.out[p]) chips.push('<span class="chip warnc">踏切</span>');
     if (P.tickets) chips.push(`<span class="chip">ぬけ道券${P.tickets}</span>`);
+    if (P.lastMonths && !V.out[p]) chips.push(`<span class="chip" title="年末の大抽選の抽選券 ${DREAM_TICKET_BASE + DREAM_TICKET_PER_MONTH * P.lastMonths}枚">最下位${P.lastMonths}か月</span>`);
     if (V.out[p]) chips.push('<span class="chip outc">破産</span>');
     if (online && !P.cpu && P.uid) chips.push(P.uid === A.cap.uid ? '<span class="chip me">あなた</span>' : here(P.uid) ? '<span class="chip on">接続中</span>' : '<span class="chip off">不在</span>');
     let ctl = '';
@@ -3807,51 +4183,62 @@ function renderPlayers() {
 }
 function netWorthView(S, V, p) {
   let w = V.money[p];
-  for (let i = 0; i < N_SQ; i++) if (V.own[i] === p) w += landPrice(V, i) - (V.mort[i] ? unmortCost(i) : 0) + bldValue(V, i);
+  for (let i = 0; i < N_SQ; i++) if (V.own[i] === p) w += landPrice(V, i) - mortDebt(V, i) + bldSaleValue(V, i);
   return w;
 }
 function rentRows(s, i, V) {
   const o = V ? V.own[i] : -1, l = V ? V.lvl[i] : 0;
+  // the table holds the plain rents; when ★ or this month multiply them, the rent right now is added below
+  const nowRow = word => { if (!V || o < 0 || V.mort[i]) return ''; const m = rentMult(V, i); return m === 1 ? '' : `<tr class="now"><th>いまの${word}</th><td>${yen(rentFor(V, i, 7))}（表の×${fmtX(m)}）</td></tr>`; };
   if (s.k === 'prop') {
     const full = V && o >= 0 && GROUP_SQ[s.g].every(j => V.own[j] === o);
     const rows = [['更地', s.rents[0], o >= 0 && l === 0 && !full], ['色をそろえた更地', s.rents[0] * 2, o >= 0 && l === 0 && full], ...[1, 2, 3, 4].map(k => [`家${k}軒`, s.rents[k], o >= 0 && l === k]), ['マンション', s.rents[5], o >= 0 && l === 5]];
-    return `<table class="rent">${rows.map(([t, v, on]) => `<tr class="${on ? 'on' : ''}"><th>${t}</th><td>${yen(v)}</td></tr>`).join('')}</table>`;
+    return `<table class="rent">${rows.map(([t, v, on]) => `<tr class="${on ? 'on' : ''}"><th>${t}</th><td>${yen(v)}</td></tr>`).join('')}${nowRow('家賃')}</table>`;
   }
   if (s.k === 'rail') {
     const n = o >= 0 ? RAIL_SQ.filter(j => V.own[j] === o).length : 0, x = s.bus && V && hasNews(V, 'brt') ? 2 : 1;
-    return `<table class="rent">${[1, 2, 3, 4].map(k => `<tr class="${n === k ? 'on' : ''}"><th>${k === 4 ? '4路線（葛飾交通網）' : k + '路線を持つ'}</th><td>${yen(RAIL_RENT[k] * x)}</td></tr>`).join('')}<tr><th>4路線の特典</th><td>毎月、ほかの全員から定期代${yen(TEIKI)}</td></tr></table>`;
+    return `<table class="rent">${[1, 2, 3, 4].map(k => `<tr class="${n === k ? 'on' : ''}"><th>${k === 4 ? '4路線（葛飾交通網）' : k + '路線を持つ'}</th><td>${yen(RAIL_RENT[k] * x)}</td></tr>`).join('')}${nowRow('運賃')}<tr><th>4路線の特典</th><td>毎月、ほかの全員（最下位の人はのぞく）から定期代${yen(TEIKI)}。抵当中の路線があるとお休み</td></tr></table>`;
   }
-  if (s.k === 'util') return `<table class="rent"><tr class="${o >= 0 ? 'on' : ''}"><th>止まった人</th><td>サイコロの目 × ${UTIL_X}万円</td></tr><tr class="${o >= 0 ? 'on' : ''}"><th>毎月の水道料金</th><td>ほかの全員から、建物1段につき${WATER}万円（マンションは5段）</td></tr></table>`;
-  if (s.k === 'yama') return `<table class="rent"><tr class="${o >= 0 ? 'on' : ''}"><th>入館料</th><td>止まった人の資産の${YAMA_PCT}%（最低1,000万円）</td></tr><tr class="${o >= 0 ? 'on' : ''}"><th>毎月のお茶会</th><td>資産1位の人から${yen(TEA)}。持ち主が1位なら維持費${yen(TEA_UPKEEP)}を払う</td></tr></table>`;
+  if (s.k === 'util') {
+    const m = V && o >= 0 && !V.mort[i] ? rentMult(V, i) : 1;
+    return `<table class="rent"><tr class="${o >= 0 ? 'on' : ''}"><th>止まった人</th><td>サイコロの目 × ${UTIL_X}万円</td></tr>${m !== 1 ? `<tr class="now"><th>いまの料金（×${fmtX(m)}）</th><td>目が7なら${yen(rentFor(V, i, 7))}</td></tr>` : ''}<tr class="${o >= 0 ? 'on' : ''}"><th>毎月の水道料金</th><td>ほかの全員から、建物1段につき${WATER}万円（マンションは5段）</td></tr></table>`;
+  }
+  if (s.k === 'yama') return `<table class="rent"><tr class="${o >= 0 ? 'on' : ''}"><th>入館料</th><td>止まった人の資産 × サイコロの目×${YAMA_STEP}%（目が2なら${2 * YAMA_STEP}%、12なら${YAMA_MAX}%。最低1,000万円）</td></tr><tr class="${o >= 0 ? 'on' : ''}"><th>毎月のお茶会</th><td>資産1位の人から${yen(TEA)}。持ち主が1位なら維持費${yen(TEA_UPKEEP)}を払う</td></tr></table>`;
   return '';
 }
+const blankValues = () => ({ zone: new Array(GROUPS.length).fill(0), mort: new Array(N_SQ).fill(0), own: new Array(N_SQ).fill(-1), lvl: new Array(N_SQ).fill(0), round: 1, rounds: 20 });
 function renderDetail() {
   const el = $('detail'), S = activeState(), V = A.V;
   const i = A.sel >= 0 ? A.sel : S && S.status === 'playing' && V ? V.pos[S.turn] : 39;
   const s = BOARD[i], o = V ? V.own[i] : -1, l = V ? V.lvl[i] : 0, m = V ? V.mort[i] : 0;
   let h = deedHead(i);
-  if (s.k === 'prop') h += `<p class="datum">2026年地価公示の町の平均 ${s.land.toFixed(1)}万円/㎡ × 100㎡</p>`;
+  if (s.k === 'prop') h += `<p class="datum">2026年地価公示の町の平均 ${+s.land.toFixed(2)}万円/㎡ × 100㎡</p>`;
   if (OWNABLE(s)) {
-    h += `<p class="owner">${o >= 0 && S ? `<span>持ち主 ${playerChip(S, o)}</span><span>${s.k === 'prop' ? LVL_NAME[l] : ''}${m ? '・抵当中' : ''}</span>` : `<span>だれも持っていない・${yen(V && s.k === 'prop' ? landPrice(V, i) : s.price)}</span>`}</p>`;
+    h += `<p class="owner">${o >= 0 && S ? `<span>持ち主 ${playerChip(S, o)}</span><span>${s.k === 'prop' ? LVL_NAME[l] : ''}${m ? '・抵当中' : ''}</span>` : `<span>だれも持っていない・${yen(V ? landPrice(V, i) : s.price)}</span>`}</p>`;
     h += rentRows(s, i, V);
     if (V) {
       const notes = [], round = V.round || 1, id = MONTH_EV[monthIndex(round)].id, fx = V.mfx || {}, z = s.k === 'prop' ? zoneLvl(V, s.g) : 0;
-      if (z) notes.push(`再開発${'★'.repeat(z)}：家賃${1.5 + 0.5 * z}倍・土地${1 + 0.5 * z}倍・建物${1 + z}倍の値打ち`);
+      if (z) notes.push(`再開発${'★'.repeat(z)}：家賃×${zoneRentMult(z)}・時価×${zoneValMult(z)}（土地も家・マンションも）`);
+      const x = escMult(V);
+      if (x > 1 && s.k !== 'yama') notes.push(`地価の高騰期：${s.k === 'prop' ? '家賃' : s.k === 'rail' ? '運賃' : '料金'}×${fmtX(x)}`);
       if (round > 1) {
         if (s.k === 'prop' && id === 'shobu' && s.g === 3) notes.push('今月は菖蒲まつりで家賃2倍');
         if (s.k === 'prop' && id === 'hanabi' && s.g === 4) notes.push('今月は花火大会で家賃2倍');
-        if (id === 'gw' && ((s.k === 'prop' && s.g === 0) || s.k === 'yama')) notes.push('今月はゴールデンウィークで2倍');
-        if (id === 'moving') notes.push('今月は引っ越しシーズンで家賃1.5倍');
-        if (id === 'heat' && s.k === 'util') notes.push('今月は猛暑で水道料金2倍');
+        if (id === 'gw' && s.k === 'prop' && s.g === 0) notes.push('今月はゴールデンウィークで家賃2倍');
+        if (id === 'gw' && s.k === 'yama') notes.push(`今月はゴールデンウィークで、入館料はサイコロに関係なく資産の${YAMA_MAX}%`);
+        if (id === 'moving' && s.k === 'prop') notes.push('今月は引っ越しシーズンで家賃1.5倍');
+        if (id === 'heat' && s.k === 'util') notes.push(`今月はじめの水道料金は猛暑で2倍（建物1段につき${yen(WATER * 2)}）`);
       }
-      if (fx.tv && ((s.k === 'prop' && s.g === 4) || s.k === 'yama')) notes.push('今月はテレビの柴又特集で3倍');
+      if (fx.tv && s.k === 'prop' && s.g === 4) notes.push('今月はテレビの柴又特集で家賃3倍');
+      if (fx.tv && s.k === 'yama') notes.push(`今月はテレビの柴又特集で、入館料はサイコロに関係なく資産の${YAMA_MAX}%`);
       if (fx.boost !== undefined && s.k === 'prop' && s.g === fx.boost) notes.push('今月は大型スーパーの開店で家賃2倍');
-      if (fx.tori !== undefined && o >= 0 && o === fx.tori) notes.push('今月は酉の市の熊手で、この持ち主の家賃収入3倍');
-      if (s.k === 'rail' && o >= 0 && RAIL_SQ.every(j => V.own[j] === o)) notes.push(`葛飾交通網を制覇：毎月、ほかの全員から定期代${yen(TEIKI)}（最下位の人はのぞく）`);
+      if (fx.tori !== undefined && o >= 0 && o === fx.tori && (s.k === 'prop' || s.k === 'rail')) notes.push(`今月は酉の市の熊手で、この持ち主が受け取る${s.k === 'rail' ? '運賃' : '家賃'}は3倍`);
+      if (s.k === 'rail' && o >= 0 && RAIL_SQ.every(j => V.own[j] === o)) notes.push(networkOwner(V) === o ? `葛飾交通網を制覇：毎月、ほかの全員から定期代${yen(TEIKI)}（最下位の人はのぞく）` : '葛飾交通網を制覇：抵当中の路線があるので、定期代はお休み');
       if (notes.length) h += `<p class="owner" style="color:var(--gold)"><b>${notes.join('／')}</b></p>`;
     }
-    h += `<p class="hint">${s.k === 'prop' ? `家1軒 ${yen(GROUPS[s.g].house)}、マンション ${yen(GROUPS[s.g].mansion)}。` : ''}${s.k === 'rail' ? '資産が最下位の人は運賃がタダで、どの路線も元の値段で買い取れます（下町パス）。' : ''}抵当 ${yen(mortValue(i))}、銀行に売ると ${yen(V ? Math.max(0, sellValue(V, i)) : round10(s.price * SELL_RATE))}。抵当中は、ほかの人に倍の値段で買い取られることがあります。</p>`;
-  } else if (s.k === 'tax' && s.id === 'kotei') h += `<p class="hint">持っている土地と建物の値打ちの合計の1.4%を募金箱へ払います。</p>`;
+    const zs = V || blankValues();
+    h += `<p class="hint">${s.k === 'prop' ? `いま建てると家1軒 ${yen(buildCost(zs, i, 1))}、マンション ${yen(buildCost(zs, i, 5))}。` : ''}${s.k === 'rail' ? '資産が最下位の人は運賃がタダで、どの路線も時価で買い取れます（下町パス）。' : ''}抵当で借りられるのは ${yen(mortValue(zs, i))}。銀行に売ると ${yen(Math.max(0, sellValue(zs, i)))}${zs.lvl[i] ? `（建物を売るとさらに ${yen(bldSaleValue(zs, i))}）` : ''}。抵当中は、ほかの人に時価の2倍で買い取られることがあります。</p>`;
+  }
   el.innerHTML = h;
   $('detailNote').textContent = A.sel >= 0 ? 'マスを押して切りかえ' : S && S.status === 'playing' ? 'いまいるマス' : '盤のマスを押すと札が出ます';
 }
@@ -3892,7 +4279,7 @@ document.addEventListener('click', e => {
     case 'seatAdd': readSeats(); if (A.seats.length < MAX_SEATS) A.seats.push({ nick: 'CPU ' + A.seats.length, cpu: true }); renderAction(); return;
     case 'seatDel': readSeats(); A.seats.splice(+t.dataset.i, 1); renderAction(); return;
     case 'startLocal': if (A.L && A.L.status === 'over' && !$('seat-nick-0')) { A.seats = A.L.players.map(p => ({ nick: p.nick, cpu: p.cpu })); } else readSeats(); startLocal(); return;
-    case 'resumeLocal': { const g = store.get('localGame', null); if (g && g.v === 4) { resetView(); A.L = g; onState(); scheduleCpu(); } return; }
+    case 'resumeLocal': { const g = store.get('localGame', null); if (g && okVer(g.v)) { resetView(); A.L = migrate(g); onState(); scheduleCpu(); } return; }
     case 'setup': A.L = null; store.set('localGame', null); resetView(); render(); return;
     case 'do': { const act2 = { t: t.dataset.t }; if (t.dataset.sq !== undefined) act2.sq = +t.dataset.sq; dispatch(act2); return; }
     case 'answer': dispatch({ t: 'answer', yes: t.dataset.v === '1' }); return;
@@ -3949,7 +4336,7 @@ document.addEventListener('input', e => {
 /* ---------------- static lists ---------------- */
 $('cardList').innerHTML = KAIRAN.map(c => `<li><b>回覧板</b><span>${esc(c.t)}</span></li>`).join('') + OMIKUJI.map(c => `<li><b>おみくじ</b><span>${esc(c.t)}</span></li>`).join('') + NEWS.map(c => `<li class="news"><b>号外</b><span>${esc(c.t)}</span></li>`).join('');
 $('calTable').innerHTML = `<tr><th>月</th><td><b>できごと</b></td></tr>` + MONTHS.map((m, k) => `<tr><th>${m}</th><td><b>${esc(MONTH_EV[k].n)}</b>　${esc(MONTH_EV[k].d)}${k === 0 ? '（最初の4月は対局開始）' : ''}</td></tr>`).join('');
-$('priceTable').innerHTML = `<tr><th>土地</th><td>1㎡あたり</td><td>ゲームの値段</td></tr>` + BOARD.map(s => s.k === 'prop' ? `<tr><th><i style="--g:${GROUPS[s.g].c}"></i>${esc(s.n)}</th><td>${s.land.toFixed(1)}万円</td><td>${yen(s.price)}</td></tr>` : '').join('');
+$('priceTable').innerHTML = `<tr><th>土地</th><td>1㎡あたり</td><td>ゲームの値段</td></tr>` + BOARD.map(s => s.k === 'prop' ? `<tr><th><i style="--g:${GROUPS[s.g].c}"></i>${esc(s.n)}</th><td>${+s.land.toFixed(2)}万円</td><td>${yen(s.price)}</td></tr>` : '').join('');
 
 /* ---------------- boot ---------------- */
 function start(data) {
@@ -3960,7 +4347,7 @@ function start(data) {
     B3.setSfx((k, d) => SND.fx(k, d));
     SND.mount(document.querySelector('.b3-btns'));
   }
-  if (data && data.L && data.L.v === 4) A.L = data.L;
+  if (data && data.L && okVer(data.L.v)) A.L = migrate(data.L);
   boot();
   if (A.L) { onState(); scheduleCpu(); }
 }
